@@ -26,6 +26,8 @@
     "dayjs": "^1.10.6",
     "detect-it": "^4.0.1",
     "gsap": "^3.10.4",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-pretty-html": "^2.0.10",
     "imagesloaded": "^4.1.4",
     "inputmask": "^5.0.6",
     "intl-tel-input": "^17.0.18",

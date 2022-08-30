@@ -19,6 +19,9 @@ const sourcemaps = require('gulp-sourcemaps');
 const fs = require('fs');
 const path = require('path');
 
+const htmlmin = require('gulp-htmlmin');
+const prettyHtml = require('gulp-pretty-html');
+
 gulp.task('sprite', function() {
     return gulp
         .src('src/img/icons/*.svg')
@@ -141,8 +144,28 @@ gulp.task('assets', function() {
         .pipe(browserSync.stream());
 });
 
+gulp.task('beautify-html', () => {
+    return gulp.src('./build/*.html')
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            collapseInlineTagWhitespace: true,
+            removeComments: true
+        }))
+        .pipe(prettyHtml({
+            indent_size: 4,
+            indent_char: ' ',
+            indent_inner_html: true,
+            unformatted: [],
+            content_unformatted: [],
+            wrap_line_length: 0,
+            inline: [],
+            extra_liners: ['header','main','footer', '/body']
+        }))
+        .pipe(gulp.dest('./build'));
+});
+
 gulp.task('build', gulp.series('clean', 'images', 'sprite', 'handlebars', gulp.parallel('assets', 'styles', 'scripts')));
 
-gulp.task('build-production', gulp.series('clean', 'images', 'sprite', 'handlebars', gulp.parallel('assets', 'styles', 'scripts-production')));
+gulp.task('build-production', gulp.series('clean', 'images', 'sprite', 'handlebars', 'beautify-html', gulp.parallel('assets', 'styles', 'scripts-production')));
 
 gulp.task('default', gulp.series('build', 'serve'));
