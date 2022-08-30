@@ -1,0 +1,20 @@
+:root {
+  --max-container-width: 128rem;
+  --content-padding: 6rem;
+  --primary-color: #19B9DE;
+  --text-color: #4D4D4D;
+
+  --header-height: 16.2rem;
+
+  --grey: #F5F5F5;
+  --error: #b00020;
+  --success: #4CAF50;
+
+  @include breakpoint(tablet) {
+    --content-padding: 3rem;
+  }
+
+  @include breakpoint(mobile) {
+    --content-padding: 2rem;
+  }
+}

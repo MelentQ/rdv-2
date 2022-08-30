@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>
+        {{ title }}
+    </title>
+</head>
+
+<body class="no-touch" ontouchstart="">
+    <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+        {{> sprite }}
+    </div>
+
+    <div class="page-content">
+        {{> header }}
+
+        <main class="page-main">
+            {{#block "main"}}
+
+            {{/block}}
+        </main>
+
+        {{> footer }}
+        {{> ie-placeholder }}
+
+        {{> modals/form id="form1" title="Ваша заявка №1" noMessage=true}}
+        {{> modals/form id="form2" title="Ваша заявка №2" noEmail=true noSite=true noMessage=true}}
+
+        <script>
+            window.phoneCodesSettings = {
+                onlyCountries: ["ru", "ua", "by"], // https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+                preferenceCountries: ["ru"], // Страны, которые должны отображаться вверху списка
+                localizedCountries: {
+                    "ru": "Россия",
+                    "ua": "Украина",
+                    "by": "Беларусь"
+                },
+                initialCountry: "ru"
+            }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+            integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+        <script src="js/app.js"></script>
+        <script src="assets/js/backend.js"></script>
+    </div>
+</body>
+
+</html>

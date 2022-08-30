@@ -1,0 +1,36 @@
+<form class="old-form js-handle-form" data-need-validation>
+  <input name="page" type="hidden" value="/">
+  <div class="old-form__grid">
+    <div class="old-form__input-wrapper js-validation-wrapper">
+      <input class="old-form__input" name="name" type="text" placeholder="Имя" required>
+    </div>
+    <div class="old-form__input-wrapper js-validation-wrapper">
+      <input class="old-form__input" name="company" type="text" placeholder="Название компании" required>
+    </div>
+    <div class="old-form__input-wrapper js-validation-wrapper">
+      <input class="old-form__input js-phone-codes" name="phone" type="tel" required>
+    </div>
+    {{#unless noEmail}}
+    <div class="old-form__input-wrapper js-validation-wrapper">
+      <input class="old-form__input" name="email" type="email" placeholder="Корпоративный E-mail" required>
+    </div>
+    {{/unless}}
+    {{#unless noSite}}
+    <div class="old-form__input-wrapper js-validation-wrapper">
+      <input class="old-form__input" name="site" type="url" placeholder="Сайт" required>
+    </div>
+    {{/unless}}
+    {{#unless noMessage}}
+    <div class="old-form__input-wrapper js-validation-wrapper">
+      <textarea class="old-form__textarea" name="message" placeholder="Ваши задачи" required></textarea>
+    </div>
+    {{/unless}}
+    <button class="button js-submit-form" type="submit">Отправить заявку</button>
+    <div class="old-form__policy">
+      Отправляя заявку, вы даете свое согласие на обработку <a href="#" target="_blank">персональных
+        данных</a> и соглашаетесь с <a href="#" target="_blank">политикой конфеденциальности и
+        обработки
+        персональных данных компании</a>
+    </div>
+  </div>
+</form>

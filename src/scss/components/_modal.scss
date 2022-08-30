@@ -1,0 +1,53 @@
+.modal {
+
+  &__wrapper {
+  }
+
+  &__window {
+    width: 48rem;
+    padding: 5rem;
+
+    border-radius: 0.5rem;
+
+    @include breakpoint(tablet) {
+      padding: 2rem;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1.6rem;
+    right: 2rem;
+
+    svg {
+      width: 1.8rem;
+      height: 1.8rem;
+
+      fill: var(--text-color);
+    }
+
+    &:hover {
+      svg {
+        fill: var(--primary-color);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+    width: calc(100% - 4rem);
+
+    font-size: 2.4rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .old-form__input,
+  .old-form__textarea {
+    border-color: #DADCDF;
+
+    &:hover {
+      border-color: var(--primary-color);
+    }
+  }
+}

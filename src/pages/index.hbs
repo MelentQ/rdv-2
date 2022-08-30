@@ -1,0 +1,108 @@
+{{#extend "layout"}}
+{{#content "main"}}
+
+<section class="form">
+    <div class="container">
+        <h2 class="form__title">Ваша заявка</h2>
+        <form class="form__form js-lock-form js-handle-form" data-need-validation>
+            <input name="page" type="hidden" value="/">
+            <fieldset class="form__grid-inputs">
+                <div class="form__input-wrapper js-validation-wrapper">
+                    <svg class="form__input-icon">
+                        <use xlink:href="#form-1" />
+                    </svg>
+                    <input class="form__input" name="name" type="text" placeholder="Ваше имя" required>
+                    <svg class="form__input-validation-icon">
+                        <use xlink:href="#check" />
+                    </svg>
+                </div>
+                <div class="form__input-wrapper js-validation-wrapper">
+                    <svg class="form__input-icon">
+                        <use xlink:href="#form-2" />
+                    </svg>
+                    <input class="form__input" name="company" type="text" placeholder="Название компании" required>
+                    <svg class="form__input-validation-icon">
+                        <use xlink:href="#check" />
+                    </svg>
+                </div>
+                <div class="form__input-wrapper js-validation-wrapper">
+                    <svg class="form__input-icon">
+                        <use xlink:href="#form-3" />
+                    </svg>
+                    <input class="form__input js-phone-input" name="phone" type="tel" placeholder="+7 (___) ___-__-__"
+                        required>
+                    <svg class="form__input-validation-icon">
+                        <use xlink:href="#check" />
+                    </svg>
+                </div>
+                <div class="form__input-wrapper js-validation-wrapper">
+                    <svg class="form__input-icon">
+                        <use xlink:href="#form-4" />
+                    </svg>
+                    <input class="form__input" name="email" type="email" placeholder="Ваш корпоративный E-mail"
+                        required>
+                    <svg class="form__input-validation-icon">
+                        <use xlink:href="#check" />
+                    </svg>
+                </div>
+                <div class="form__input-wrapper js-validation-wrapper">
+                    <svg class="form__input-icon">
+                        <use xlink:href="#form-5" />
+                    </svg>
+                    <input class="form__input" name="site" type="url" placeholder="Ваш сайт" required>
+                    <svg class="form__input-validation-icon">
+                        <use xlink:href="#check" />
+                    </svg>
+                </div>
+            </fieldset>
+
+            <div class="form__input-wrapper js-validation-wrapper">
+                <svg class="form__input-icon">
+                    <use xlink:href="#form-6" />
+                </svg>
+                <textarea class="form__textarea" name="message" placeholder="Опишите свои задачи" required></textarea>
+                <svg class="form__input-validation-icon">
+                    <use xlink:href="#check" />
+                </svg>
+            </div>
+
+            <button class="form__submit-button js-submit-form" type="submit">
+                <span>Отправить</span>
+                <svg width="9" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m1 1 6 6-6 6" />
+                </svg>
+            </button>
+
+            <label class="form__policy js-validation-wrapper">
+                <input class="js-lock-form-input" name="policy" type="checkbox" required checked>
+                <span class="form__checkmark"></span>
+                <span>Отправляя заявку, вы даете свое согласие на обработку <a href="#" target="_blank">персональных
+                        данных</a> и соглашаетесь с <a href="#" target="_blank">условиями оферты</a>.</span>
+            </label>
+        </form>
+    </div>
+</section>
+
+<section class="two-columns">
+    <div class="container">
+        <div class="two-columns__inner">
+            <div class="two-columns__text-block">
+                <h2 class="two-columns__title">Оставьте, пожалуйста, ваши контакты и опишите текущие сложности по работе
+                    со
+                    складом</h2>
+                <div class="two-columns__text">
+                    <p>Мы с вами свяжемся и обсудим все детали</p>
+                </div>
+                <div class="two-columns__image-wrapper">
+                    <img class="two-columns__image" src="img/content/forms/form-picture.png" alt="Form Picture">
+                </div>
+            </div>
+            <div class="two-columns__content-block">
+                {{> old-form}}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{/content}}
+{{/extend}}
