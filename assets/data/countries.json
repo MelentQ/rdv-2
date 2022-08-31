@@ -28,13 +28,6 @@
     "isInitial": false
   },
   {
-    "code": "kz",
-    "pattern": "+{code} (700) 000 00 00",
-    "name": "Казахстан",
-    "flag": "img/flags/kz.svg",
-    "isInitial": false
-  },
-  {
     "code": "kg",
     "pattern": "+{code} 0000 000 00",
     "name": "Киргизия",

@@ -56,12 +56,13 @@
                         <use xlink:href="#check" />
                     </svg>
                 </div>
-                <div class="form__input-wrapper js-validation-wrapper">
+                <div class="input input--phone">
                     <svg class="form__input-icon">
                         <use xlink:href="#form-3" />
                     </svg>
-                    <input class="form__input js-phone-input" name="phone" type="tel" placeholder="+7 (___) ___-__-__"
-                        required>
+                    <input class="input__control js-old-input" name="phone" type="tel" data-input=""
+                        placeholder="Телефон" autocomplete="off" required data-parsley-phone>
+                    <label class="input__placeholder">Телефон</label>
                     <svg class="form__input-validation-icon">
                         <use xlink:href="#check" />
                     </svg>
