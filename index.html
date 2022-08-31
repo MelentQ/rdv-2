@@ -42,7 +42,8 @@
                     <svg class="form__input-icon">
                         <use xlink:href="#form-1" />
                     </svg>
-                    <input class="form__input" name="name" type="text" placeholder="Ваше имя" required>
+                    <input class="form__input" name="name" type="text" placeholder="Ваше имя"
+                        data-parsley-pattern="^[а-яА-ЯA-Za-z- ]+[^\s]+$" required>
                     <svg class="form__input-validation-icon">
                         <use xlink:href="#check" />
                     </svg>
@@ -105,12 +106,14 @@
                 </svg>
             </button>
 
-            <label class="form__policy js-validation-wrapper">
-                <input class="js-lock-form-input" name="policy" type="checkbox" required checked>
-                <span class="form__checkmark"></span>
-                <span>Отправляя заявку, вы даете свое согласие на обработку <a href="#" target="_blank">персональных
-                        данных</a> и соглашаетесь с <a href="#" target="_blank">условиями оферты</a>.</span>
-            </label>
+            <div class="form__policy-wrapper">
+                <label class="form__policy js-validation-wrapper">
+                    <input class="js-lock-form-input" name="policy" type="checkbox" required checked>
+                    <span class="form__checkmark"></span>
+                    <span>Отправляя заявку, вы даете свое согласие на обработку <a href="#" target="_blank">персональных
+                            данных</a> и соглашаетесь с <a href="#" target="_blank">условиями оферты</a>.</span>
+                </label>
+            </div>
         </form>
     </div>
 </section>
