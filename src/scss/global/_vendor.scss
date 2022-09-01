@@ -20,7 +20,12 @@
 // https://parsleyjs.org/doc/annotated-source/defaults.html
 
 .parsley-errors-list {
-  display: none;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(1px);
+  color: #ff3645;
 }
 
 // https://github.com/jackocnr/intl-tel-input

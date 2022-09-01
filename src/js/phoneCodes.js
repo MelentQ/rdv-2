@@ -1,17 +1,23 @@
 import intlTelInput from 'intl-tel-input';
+import { InputFactory } from './old/Input';
 
 export default function phoneCodes() {
-  if (window.phoneCodesSettings) {
-    const inputs = document.querySelectorAll(".js-phone-codes");
-    inputs.forEach(input => {
-      intlTelInput(input, {
-        autoPlaceholder: "aggressive",
-        hiddenInput: "full_phone",
-        ...window.phoneCodesSettings,
-        utilsScript: "assets/js/intl-tel-input/utils.js"
-      });
-    })
+  const urlElement = document.querySelector('.js-phone-codes-data');
+  if (urlElement) {
+    fetch(urlElement.dataset.url)
+      .then(res => res.json())
+      .then(data => {
+        if (data.length) {
+          const style = document.createElement("style")
+          data.forEach(item => {
+            style.textContent += `.iti__${item.code} { background-image: url("${item.flag}") !important; }`;
+          })
+          document.head.appendChild(style)
+          
+          const inputs = new InputFactory({selector: '.js-old-input'}, data);
+        }
+      })
   } else {
-    console.warn("Не указаны настройки для телефонных кодов стран!")
+    console.warn('Телефонные коды не работают! Не найдена ссылка на json')
   }
 }

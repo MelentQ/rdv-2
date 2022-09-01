@@ -21,7 +21,7 @@ window.Parsley.addValidator('requiredIfChecked', {
     },
     messages: {
         en: 'Required field',
-        ru: 'Обязательное поле',
+        ru: 'Поле обязательно для заполнения',
     },
     priority: 33,
 });
@@ -30,11 +30,11 @@ window.Parsley.addValidator('phone', {
     requirementType: 'string',
     validateString: function (value) {
         if (value.trim() === '') return true;
-        return /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(value);
+        return /^\d+$/.test(value.replace('(', '').replace(')', '').replace(' ', '').replace('+', '').replace(' ', '').replace(' ', '').replace(' ', ''));
     },
     messages: {
         en: 'This value should be a mobile number',
-        ru: 'Введите правильный номер мобильного телефона',
+        ru: 'Введите корректный номер телефона',
     },
 });
 
@@ -61,7 +61,7 @@ Parsley.addMessages('ru', {
         alphanum: 'Введите буквенно-цифровое значение.',
     },
     notblank: 'Это поле должно быть заполнено.',
-    required: 'Обязательное поле',
+    required: 'Поле обязательно для заполнения',
     pattern: 'Это значение некорректно.',
     min: 'Это значение должно быть не менее чем %s.',
     max: 'Это значение должно быть не более чем %s.',

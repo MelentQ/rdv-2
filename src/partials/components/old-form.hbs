@@ -1,28 +1,49 @@
 <form class="old-form js-handle-form" data-need-validation>
   <input name="page" type="hidden" value="/">
   <div class="old-form__grid">
-    <div class="old-form__input-wrapper js-validation-wrapper">
+    {{!-- <div class="old-form__input-wrapper js-validation-wrapper">
       <input class="old-form__input" name="name" type="text" placeholder="Имя" required>
     </div>
     <div class="old-form__input-wrapper js-validation-wrapper">
       <input class="old-form__input" name="company" type="text" placeholder="Название компании" required>
     </div>
-    <div class="old-form__input-wrapper js-validation-wrapper">
-      <input class="old-form__input js-phone-codes" name="phone" type="tel" required>
+    <div class="old-form__input-wrapper js-validation-wrapper input input--phone">
+      <input class="old-form__input js-phone-codes input__control" name="phone" type="tel" required>
+    </div> --}}
+    <div class="input">
+      <input class="input__control js-old-input" name="name" type="text" data-input="" placeholder="Имя"
+        autocomplete="off" data-parsley-pattern="^[а-яА-ЯA-Za-z- ]+[^\s]+$" required>
+      <label class="input__placeholder">Имя</label>
+    </div>
+    <div class="input">
+      <input class="input__control js-old-input" name="company" type="text" data-input=""
+        placeholder="Название компании" autocomplete="off" required>
+      <label class="input__placeholder">Название компании</label>
+    </div>
+    <div class="input input--phone">
+      <input class="input__control js-old-input" name="phone" type="tel" data-input="" placeholder="Телефон"
+        autocomplete="off" required data-parsley-phone>
+      <label class="input__placeholder">Телефон</label>
     </div>
     {{#unless noEmail}}
-    <div class="old-form__input-wrapper js-validation-wrapper">
-      <input class="old-form__input" name="email" type="email" placeholder="Корпоративный E-mail" required>
+    <div class="input">
+      <input class="input__control js-old-input" type="email" data-input="" placeholder="Корпоративный Email"
+        autocomplete="off" required name="email">
+      <label class="input__placeholder">Корпоративный Email</label>
     </div>
     {{/unless}}
     {{#unless noSite}}
-    <div class="old-form__input-wrapper js-validation-wrapper">
-      <input class="old-form__input" name="site" type="url" placeholder="Сайт" required>
+    <div class="input">
+      <input class="input__control js-old-input" type="text" data-input="" placeholder="Сайт" autocomplete="off"
+        name="cite">
+      <label class="input__placeholder">Сайт</label>
     </div>
     {{/unless}}
     {{#unless noMessage}}
-    <div class="old-form__input-wrapper js-validation-wrapper">
-      <textarea class="old-form__textarea" name="message" placeholder="Ваши задачи" required></textarea>
+    <div class="input">
+      <textarea class="input__control input__control--textarea js-old-input" data-input="" placeholder="Ваши задачи"
+        required name="comment"></textarea>
+      <label class="input__placeholder">Ваши задачи</label>
     </div>
     {{/unless}}
     <button class="button js-submit-form" type="submit">Отправить заявку</button>

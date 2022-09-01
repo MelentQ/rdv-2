@@ -37,18 +37,7 @@
         {{> modals/form id="form1" title="Ваша заявка №1" noMessage=true}}
         {{> modals/form id="form2" title="Ваша заявка №2" noEmail=true noSite=true noMessage=true}}
 
-        <script>
-            window.phoneCodesSettings = {
-                onlyCountries: ["ru", "ua", "by"], // https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-                preferenceCountries: ["ru"], // Страны, которые должны отображаться вверху списка
-                localizedCountries: {
-                    "ru": "Россия",
-                    "ua": "Украина",
-                    "by": "Беларусь"
-                },
-                initialCountry: "ru"
-            }
-        </script>
+        <div class="js-phone-codes-data" data-url="assets/data/countries.json"></div>
 
         <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
             integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>

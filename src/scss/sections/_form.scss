@@ -109,7 +109,8 @@
     transition: opacity 0.3s ease;
   }
 
-  &__input {
+  &__input,
+  .input__control {
     width: 100%;
     min-height: 6.6rem;
     padding: 2.2rem 6rem;
@@ -121,6 +122,7 @@
   
     border: 0.1rem solid white;
     border-radius: 3.5rem;
+    box-shadow: none;
   
     background-color: white;
   
@@ -141,6 +143,23 @@
     &:hover {
       border-color: var(--primary-color);
     }
+  }
+
+  .input .form__input-icon {
+    z-index: 4;
+  }
+
+  .input--iti-open::before,
+  .input--iti-open::after {
+    border-radius: 3.5rem 3.5rem 0 0;
+  }
+
+  .input--phone .iti--allow-dropdown input {
+    padding-left: 15.1rem;
+  }
+
+  .input--phone .iti .iti__selected-flag {
+    left: 4.4rem;
   }
 
   &__textarea {
@@ -333,6 +352,14 @@
         outline: 0.1rem dotted var(--primary-color);
         outline-offset: 0.1rem;
       }
+    }
+  }
+
+  &__policy-wrapper {
+    position: relative;
+
+    .parsley-errors-list {
+      display: none;
     }
   }
 
