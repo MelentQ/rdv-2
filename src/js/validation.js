@@ -28,9 +28,23 @@ window.Parsley.addValidator('requiredIfChecked', {
 
 window.Parsley.addValidator('phone', {
     requirementType: 'string',
-    validateString: function (value) {
+    validateString: function (value, x, input) {
         if (value.trim() === '') return true;
-        return /^\d+$/.test(value.replace('(', '').replace(')', '').replace(' ', '').replace('+', '').replace(' ', '').replace(' ', '').replace(' ', ''));
+        const isValid =  /^\d+$/.test(value.replace('(', '').replace(')', '').replace(' ', '').replace('+', '').replace(' ', '').replace(' ', '').replace(' ', ''));
+
+        const wrapper = input.element.closest('.input');
+
+        if (wrapper) {
+            if (isValid) {
+                wrapper.classList.add('success')
+                wrapper.classList.remove('error')
+            } else {
+                wrapper.classList.remove('success')
+                wrapper.classList.add('error')
+            }
+        }
+
+        return isValid;
     },
     messages: {
         en: 'This value should be a mobile number',

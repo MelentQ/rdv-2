@@ -238,6 +238,11 @@ $input-font-size: 1.6rem;
 
 					background: color('gray-medium');
 				}
+
+				&:focus {
+					outline: none;
+					box-shadow: none;
+				}
 			}
 
 			.iti__flag {
