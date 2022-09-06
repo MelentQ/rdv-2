@@ -289,6 +289,10 @@
       }
     }
 
+    &:focus {
+      box-shadow: none;
+    }
+
     svg {
       position: absolute;
       top: 2.6rem;

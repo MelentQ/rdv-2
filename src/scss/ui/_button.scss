@@ -19,4 +19,8 @@
     background-color: white;
     color: var(--primary-color);
   }
+
+  &:focus {
+    box-shadow: none;
+  }
 }
