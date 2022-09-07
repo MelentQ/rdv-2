@@ -31,6 +31,10 @@
         fill: var(--primary-color);
       }
     }
+
+    &:focus {
+      box-shadow: none;
+    }
   }
 
   &__title {
