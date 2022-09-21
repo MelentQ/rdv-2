@@ -2,12 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('backend.js');
 
     window.onSuccess = (response, form, formData) => {
-      debugForm(formData, response.status);
+      // debugForm(formData, response.status);
+      window.rdv.modals.open('#success');
       form.reset();
     }
 
     window.onError = (response, form, formData) => {
-      debugForm(formData, response.status);
+      // debugForm(formData, response.status);
+      window.rdv.modals.open('#error');
     }
 });
 
