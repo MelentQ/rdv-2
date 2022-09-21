@@ -6,6 +6,10 @@ import phoneCodes from "./phoneCodes";
 import validation from "./validation";
 
 document.addEventListener('DOMContentLoaded', function () {
+  window.rdv = {
+    info: "Функции для вызова на беке"
+  };
+  
   masks();
   validation();
   

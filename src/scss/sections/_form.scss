@@ -64,20 +64,21 @@
     position: relative;
 
     &.error {
-      .form__input {
-        box-shadow: 0.2rem 0.2rem #ff3645, -0.2rem -0.2rem #ff3645, -0.2rem 0.2rem #ff3645, 0.2rem -0.2rem #ff3645;
-      }
-
+      .form__input,
       .form__textarea {
-        box-shadow: 0.2rem 0.2rem #ff3645, -0.2rem -0.2rem #ff3645, -0.2rem 0.2rem #ff3645, 0.2rem -0.2rem #ff3645;
+        box-shadow: 0.2rem 0.2rem #ff3645, -0.2rem -0.2rem #ff3645, -0.2rem 0.2rem #ff3645, 0.2rem -0.2rem #ff3645 !important;
       }
     }
 
     &.success {
       .form__input-validation-icon {
-        opacity: 1;
+        fill: #4CAF50;
       }
     }
+  }
+
+  .input.error .input__control {
+    box-shadow: 0.2rem 0.2rem #ff3645, -0.2rem -0.2rem #ff3645, -0.2rem 0.2rem #ff3645, 0.2rem -0.2rem #ff3645 !important;
   }
 
   &__input-icon {
@@ -99,14 +100,17 @@
     position: absolute;
     top: 50%;
     right: 2.3rem;
+    z-index: 3;
+    user-select: none;
+    pointer-events: none;
     transform: translateY(-50%);
 
     width: 2rem;
     height: 2rem;
 
-    opacity: 0;
+    fill: #E0E0E0;
 
-    transition: opacity 0.3s ease;
+    transition: fill 0.3s ease;
   }
 
   &__input,
@@ -147,7 +151,7 @@
 
   .input.success {
     .form__input-validation-icon {
-      opacity: 1;
+      fill: #4CAF50;
       z-index: 3;
     }
   }
@@ -176,6 +180,10 @@
 
   .input--phone .iti .iti__selected-flag {
     left: 4.4rem;
+  }
+
+  .input {
+    position: relative;
   }
 
   &__textarea {

@@ -12,6 +12,10 @@
     @include breakpoint(tablet) {
       padding: 2rem;
     }
+
+    @media screen and (max-width: 520px) {
+      width: calc(100% - 4rem);
+    }
   }
 
   &__close {
