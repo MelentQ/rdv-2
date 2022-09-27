@@ -7,6 +7,7 @@ export default function forms() {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      form.classList.add('loading');
       submitBtn.classList.add('disabled');
       submitBtn.setAttribute('disabled', true);
 
@@ -29,6 +30,7 @@ export default function forms() {
         .finally(() => {
           submitBtn.classList.remove('disabled');
           submitBtn.removeAttribute('disabled');
+          form.classList.remove('loading');
         })
     })
   })

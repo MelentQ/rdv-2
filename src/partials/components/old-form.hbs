@@ -12,7 +12,7 @@
     </div> --}}
     <div class="input">
       <input class="input__control js-old-input" name="name" type="text" data-input="" placeholder="Имя"
-        autocomplete="off" data-parsley-pattern="^[а-яА-ЯA-Za-z- ]+[^\s]+$" required>
+        autocomplete="off" data-parsley-pattern="^[а-яА-ЯA-Za-z ]+$" required>
       <label class="input__placeholder">Имя</label>
     </div>
     <div class="input">
@@ -34,8 +34,8 @@
     {{/unless}}
     {{#unless noSite}}
     <div class="input">
-      <input class="input__control js-old-input" type="text" data-input="" placeholder="Сайт" autocomplete="off"
-        name="cite">
+      <input class="input__control js-old-input" type="url" data-input="" placeholder="Сайт" autocomplete="off"
+        name="site">
       <label class="input__placeholder">Сайт</label>
     </div>
     {{/unless}}
@@ -46,7 +46,9 @@
       <label class="input__placeholder">Ваши задачи</label>
     </div>
     {{/unless}}
-    <button class="button js-submit-form" type="submit">Отправить заявку</button>
+    <button class="button js-submit-form" type="submit">
+      <span>Отправить заявку</span>
+    </button>
     <div class="old-form__policy">
       Отправляя заявку, вы даете свое согласие на обработку <a href="#" target="_blank">персональных
         данных</a> и соглашаетесь с <a href="#" target="_blank">политикой конфеденциальности и

@@ -1,4 +1,9 @@
 .old-form {
+  &.loading .button::before {
+    width: 100%;
+    transition: width 4s linear;
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -101,5 +106,25 @@
         color: var(--primary-color);
       }
     }
+  }
+
+  .button {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      content: '';
+      background-color: #1b9ac4;
+    }
+  }
+
+  span {
+    z-index: 4;
   }
 }

@@ -28,6 +28,11 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    &.loading .form__submit-button::before {
+      width: 100%;
+      transition: width 4s linear;
+    }
   }
 
   &__grid-inputs {
@@ -255,6 +260,7 @@
     background-color: var(--primary-color);
   
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
 
     @include breakpoint(tablet) {
       padding: 1.9rem 0;
@@ -282,6 +288,17 @@
       @include breakpoint(tablet) {
         top: 1.4rem;
       }
+    }
+
+    &::before {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      content: '';
+      background-color: #1b9ac4;
     }
 
     &:hover {
@@ -328,6 +345,11 @@
       opacity: 0.5;
       cursor: default;
       pointer-events: none;
+    }
+
+    span {
+      position: relative;
+      z-index: 4;
     }
   }
 
