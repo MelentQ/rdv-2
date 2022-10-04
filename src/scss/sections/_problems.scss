@@ -1,0 +1,104 @@
+.problems {
+  margin: 10rem 0;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @include breakpoint(tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4rem;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint(mobile) {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__title {
+    font-size: 4rem;
+  }
+
+  &__picture-wrapper {
+    position: relative;
+
+    height: 24rem;
+    width: 100%;
+
+    @include breakpoint(tablet) {
+      margin-bottom: 4.8rem;
+    }
+
+    @include breakpoint(mobile) {
+      height: 15.6rem;
+      margin-bottom: 2.8rem;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  &__list {
+    align-self: flex-end;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    counter-reset: ordered-list;
+
+    @include breakpoint(tablet) {
+      gap: 1.8rem;
+    }
+
+    @include breakpoint(mobile) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  &__item {
+    position: relative;
+    counter-increment: ordered-list;
+
+    min-height: 8.4rem;
+    padding: 2.4rem 2.4rem 2.4rem 8rem;
+    border-radius: 3.2rem;
+    background-color: #F0F5F7;
+
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    &::before {
+      content: counter(ordered-list);
+
+      position: absolute;
+      left: 3.6rem;
+      top: 2.4rem;
+
+      color: #004773;
+      font-size: 4rem;
+      font-weight: 700;
+    }
+  }
+}

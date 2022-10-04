@@ -153,6 +153,7 @@ img {
     border-style: none;
     max-width: 100%;
     display: block;
+    user-select: none;
 }
 
 img[data-sizes='auto'] {

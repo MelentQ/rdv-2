@@ -1,4 +1,7 @@
 .button {
+  align-items: center;
+  justify-content: center;
+
   padding: 1.6rem 3rem;
 
   border-radius: 3.5rem;
@@ -12,6 +15,7 @@
   font-weight: 700;
   text-transform: uppercase;
   color: white;
+  text-align: center;
 
   transition: background-color 0.3s ease, color 0.3s ease;
 
@@ -22,5 +26,11 @@
 
   &:focus {
     box-shadow: none;
+  }
+
+  &--secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-color);
   }
 }

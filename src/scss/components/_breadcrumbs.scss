@@ -1,0 +1,47 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+
+  &__link {
+    position: relative;
+
+    transition: color 0.3s ease;
+
+    &:link,
+    &:visited {
+      color: #85B0C2;
+    }
+
+    &:last-of-type {
+      pointer-events: none;
+      &:link,
+      &:visited {
+        color: white;
+      }
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &::after {
+      content: '/';
+
+      position: absolute;
+      top: 0;
+      right: -1.2rem;
+
+      color: #85B0C2;
+    }
+
+    &:focus {
+      color: white;
+    }
+
+    &:hover {
+      color: white;
+    }
+  }
+}

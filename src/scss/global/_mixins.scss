@@ -126,7 +126,7 @@
             @content;
         }
     } @else if $class == mobile {
-        @media only screen and (max-width: (640px)) {
+        @media only screen and (max-width: (669px)) {
             @content;
         }
     } @else if $class == small-mobile {
@@ -158,7 +158,7 @@
             @content;
         }
     } @else if $class == small-tablet {
-        @media only screen and (min-width: 641px) {
+        @media only screen and (min-width: 670px) {
             @content;
         }
     } @else if $class == mobile {
