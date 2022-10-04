@@ -99,7 +99,7 @@
 
 <section class="problems">
     <div class="container">
-        <div class="problems__inner">
+        <div class="problems__inner js-show-hide js-show-hide--mobile" data-count="3">
             <div class="problems__heading">
                 <h2 class="problems__title">С какими проблемами сталкиваются продавцы на&nbsp;Wildberries</h2>
                 <div class="problems__picture-wrapper">
@@ -107,25 +107,29 @@
                 </div>
             </div>
             <ol class="problems__list">
-                    <li class="problems__item">
+                    <li class="problems__item js-show-hide-item">
                         <p>Трудоемкий процесс создания и обновления карточек товаров</p>
                     </li>
-                    <li class="problems__item">
+                    <li class="problems__item js-show-hide-item">
                         <p>Высокие штрафы за отмены заказов продавцом</p>
                     </li>
-                    <li class="problems__item">
+                    <li class="problems__item js-show-hide-item">
                         <p>Ручное обновление остатков и цен большого количества товаров</p>
                     </li>
-                    <li class="problems__item">
+                    <li class="problems__item js-show-hide-item">
                         <p>Повышенные комиссии за нарушение сроков отгрузки</p>
                     </li>
-                    <li class="problems__item">
+                    <li class="problems__item js-show-hide-item">
                         <p>Ручное подтверждение заказов, что приводит к ошибкам на больших объемах и не позволяет в онлайн-режиме обновлять остатки</p>
                     </li>
-                    <li class="problems__item">
+                    <li class="problems__item js-show-hide-item">
                         <p>Ошибки на складе при штрихкодировании товаров, комплектации и упаковке заказов</p>
                     </li>
             </ol>
+            <button class="button button--stroke js-show-hide-button" type="button">
+                <span class="default-label">Посмотреть все</span>
+                <span class="active-label">Скрыть</span>
+            </button>
         </div>
     </div>
 </section>
