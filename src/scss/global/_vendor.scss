@@ -20,7 +20,7 @@
 // https://parsleyjs.org/doc/annotated-source/defaults.html
 
 .parsley-errors-list {
-  font-size: 1.2rem;
+  @extend %fs-t3;
   position: absolute;
   top: 100%;
   left: 0;

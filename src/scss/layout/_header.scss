@@ -5,6 +5,6 @@
 
   min-height: 10rem;
 
-  font-size: 2rem;
+  @extend %fs-h4;
   background-color: #f0f0f0;
 }

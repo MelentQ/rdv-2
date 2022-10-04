@@ -46,7 +46,7 @@
 
 <section class="problems">
     <div class="container">
-        <div class="problems__inner">
+        <div class="problems__inner js-show-hide js-show-hide--mobile" data-count="3">
             <div class="problems__heading">
                 <h2 class="problems__title">С какими проблемами сталкиваются продавцы на&nbsp;Wildberries</h2>
                 <div class="problems__picture-wrapper">
@@ -55,11 +55,15 @@
             </div>
             <ol class="problems__list">
                 {{#each problems}}
-                    <li class="problems__item">
+                    <li class="problems__item js-show-hide-item">
                         {{{this.text}}}
                     </li>
                 {{/each}}
             </ol>
+            <button class="button button--stroke js-show-hide-button" type="button">
+                <span class="default-label">Посмотреть все</span>
+                <span class="active-label">Скрыть</span>
+            </button>
         </div>
     </div>
 </section>

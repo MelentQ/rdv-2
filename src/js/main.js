@@ -4,6 +4,7 @@ import masks from "./masks";
 import modals from "./modals";
 import phoneCodes from "./phoneCodes";
 import validation from "./validation";
+import showHide from "./showHide";
 
 document.addEventListener('DOMContentLoaded', function () {
   window.rdv = {
@@ -17,4 +18,5 @@ document.addEventListener('DOMContentLoaded', function () {
   lockForm();
   phoneCodes();
   modals();
+  showHide();
 });

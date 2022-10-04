@@ -30,7 +30,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Geometria', sans-serif;
-    color: var(--text-color);
+    color: $grayscale-900;
 }
 
 main {
@@ -137,7 +137,7 @@ a {
 a:where(:not[class]) {
     &:link,
     &:visited {
-        color: var(--primary-color);
+        color: $primary-300;
     }
 }
 
@@ -183,8 +183,12 @@ th {
 
 ::selection {
     color: white;
-    background-color: var(--primary-color);
-    -webkit-text-fill-color: white;
+    background-color: $primary-100;
+    -webkit-text-fill-color: $primary-900;
+}
+
+*::placeholder {
+    user-select: none;
 }
 
 input:-webkit-autofill,

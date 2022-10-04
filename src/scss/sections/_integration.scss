@@ -1,4 +1,6 @@
 .integration {
+  position: relative;
+
   background-color: #004773;
   color: white;
 
@@ -22,6 +24,10 @@
     @include breakpoint(tablet) {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    @include breakpoint(mobile) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__content {
@@ -34,6 +40,13 @@
 
     @include breakpoint(tablet) {
       grid-column: span 2;
+
+      padding: 2.5rem 0 3rem;
+    }
+
+    @include breakpoint(mobile) {
+      grid-column: span 1;
+      padding: 2.5rem 0;
     }
   }
 
@@ -42,16 +55,23 @@
     margin-bottom: 2rem;
     padding: 0.5rem 1.6rem 0.3rem;
 
-    background-color: var(--primary-color);
+    background-color: $primary-300;
 
-    font-size: 1.6rem;
+    @extend %fs-t1;
     font-weight: 700;
     text-transform: uppercase;
+
+    @include breakpoint(mobile) {
+      display: none;
+    }
   }
 
   &__title {
-    font-size: 5rem;
-    font-weight: 800;
+    @extend %fs-h1;
+
+    @include breakpoint(mobile) {
+      max-width: 35rem;
+    }
   }
 
   &__description {
@@ -59,8 +79,7 @@
     margin-top: 4.5rem;
     max-width: 58rem;
 
-    font-size: 2.4rem;
-    font-weight: 700;
+    @extend %fs-h4;
 
     &::before {
       content: '';
@@ -72,7 +91,12 @@
       width: 6.5rem;
       height: 0.5rem;
 
-      background-color: var(--secondary-color);
+      background-color: $secondary-300;
+    }
+
+    @include breakpoint(mobile) {
+      max-width: 24rem;
+      font-size: 1.6rem;
     }
   }
 
@@ -95,7 +119,7 @@
     display: inline-block;
     max-width: 15.8rem;
 
-    font-size: 1.6rem;
+    @extend %fs-t1;
     font-style: italic;
 
     @include breakpoint(tablet) {
@@ -118,14 +142,21 @@
 
     @include breakpoint(tablet) {
       grid-column: span 1;
+
+      margin-top: 2rem;
+      height: calc(100% - 4rem);
+    }
+
+    @include breakpoint(mobile) {
+      position: absolute;
+      top: 5rem;
+      right: 0;
+
+      width: 20rem;
     }
   }
 
   &__picture {
-    position: absolute;
-    top: 0;
-    right: 0;
-
     width: 100%;
     height: 100%;
 
@@ -139,10 +170,20 @@
       display: none;
 
       @include breakpoint(tablet) {
+        position: absolute;
+        top: 0;
+        right: 0;
+
         display: block;
 
         width: calc(100% + 4.8rem);
         max-width: unset;
+      }
+
+      @include breakpoint(mobile) {
+        width: 100%;
+
+        object-position: center top;
       }
     }
   }

@@ -27,12 +27,12 @@
       width: 1.8rem;
       height: 1.8rem;
 
-      fill: var(--text-color);
+      fill: $grayscale-900;
     }
 
     &:hover {
       svg {
-        fill: var(--primary-color);
+        fill: $primary-300;
       }
     }
 
@@ -45,9 +45,7 @@
     margin-bottom: 2rem;
     width: calc(100% - 4rem);
 
-    font-size: 2.4rem;
-    line-height: 1.2;
-    font-weight: 700;
+    @extend %fs-h2;
   }
 
   .old-form__input,
@@ -55,7 +53,7 @@
     border-color: #DADCDF;
 
     &:hover {
-      border-color: var(--primary-color);
+      border-color: $primary-300;
     }
   }
 }

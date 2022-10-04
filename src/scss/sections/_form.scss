@@ -13,15 +13,9 @@
     width: fit-content;
     margin: 0 auto 1em;
   
-    font-size: 4rem;
-    line-height: 1.2;
-    font-weight: 700;
+    @extend %fs-h2;
   
-    color: var(--primary-color);
-
-    @include breakpoint(tablet) {
-      font-size: 3rem;
-    }
+    color: $primary-300;
   }
 
   &__form {
@@ -94,7 +88,7 @@
     width: 2rem;
     height: 2rem;
   
-    fill: var(--primary-color);
+    fill: $primary-300;
 
     @include breakpoint(tablet) {
       top: 2rem;
@@ -124,10 +118,8 @@
     min-height: 6.6rem;
     padding: 2.2rem 6rem;
   
-    font-size: 1.6rem;
-    line-height: 1.2;
-    font-weight: 400;
-    color: var(--text-color);
+    @extend %fs-t1;
+    color: $grayscale-900;
   
     border: 0.1rem solid white;
     border-radius: 3.5rem;
@@ -142,10 +134,8 @@
     }
 
     &::placeholder {
-      font-size: 1.6rem;
-      line-height: 1.2;
-      font-weight: 400;
-      color: var(--text-color);
+      @extend %fs-t1;
+      color: $grayscale-900;
     }
 
     &:hover {
@@ -198,10 +188,8 @@
     max-height: 20rem;
     padding: 2.2rem 6rem;
   
-    font-size: 1.6rem;
-    line-height: 1.2;
-    font-weight: 400;
-    color: var(--text-color);
+    @extend %fs-t1;
+    color: $grayscale-900;
   
     border: 0.1rem solid white;
     border-radius: 5rem;
@@ -220,10 +208,8 @@
 
     &::placeholder {
       font-family: inherit;
-      font-size: 1.6rem;
-      line-height: 1.2;
-      font-weight: 400;
-      color: var(--text-color);
+      @extend %fs-t1;
+      color: $grayscale-900;
     }
 
     &:hover {
@@ -244,10 +230,9 @@
   
     border: none;
     border-radius: 5rem;
-    border: 0.1rem solid var(--primary-color);
+    border: 0.1rem solid $primary-300;
   
-    font-size: 1.4rem;
-    line-height: 1.4;
+    @extend %fs-t2;
     font-weight: 700;
     letter-spacing: 0.01em;
     text-transform: uppercase;
@@ -257,7 +242,7 @@
     cursor: pointer;
     user-select: none;
   
-    background-color: var(--primary-color);
+    background-color: $primary-300;
   
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
     overflow: hidden;
@@ -302,15 +287,16 @@
     }
 
     &:hover {
-      background-color: white;
-      color: var(--primary-color);
+      background-color: $secondary-300;
+      color: $grayscale-900;
+      border-color: $secondary-300;
 
-      &::after {
-        background-color: var(--primary-color);
-      }
-
+      //&::after {
+      //  background-color: $primary-300;
+      //}
+      //
       svg {
-        stroke: white;
+        stroke: $secondary-300;
       }
     }
 
@@ -329,7 +315,8 @@
     
       overflow: visible;
     
-      stroke: var(--primary-color);
+      stroke: $primary-300;
+      fill: none;
     
       stroke-width: 0.2rem;
       stroke-linecap: round;
@@ -360,10 +347,8 @@
     align-items: center;
     padding-left: 3.5rem;
   
-    font-size: 1.4rem;
-    line-height: 1.2;
-    font-weight: 400;
-    color: var(--text-color);
+    @extend %fs-t2;
+    color: $grayscale-900;
   
     cursor: pointer;
     user-select: none;
@@ -379,7 +364,7 @@
       }
   
       &:hover {
-        color: var(--primary-color);
+        color: $primary-300;
       }
     }
   
@@ -426,7 +411,7 @@
     height: 1.9rem;
     width: 1.9rem;
   
-    border: 0.1rem solid var(--primary-color);
+    border: 0.1rem solid $primary-300;
     border-radius: 0.2rem;
   
     background-color: rgba(60, 100, 177, 0);
@@ -442,7 +427,7 @@
     
       border-radius: 0.2rem;
     
-      background-color: var(--primary-color);
+      background-color: $primary-300;
     
       visibility: hidden;
       opacity: 0;

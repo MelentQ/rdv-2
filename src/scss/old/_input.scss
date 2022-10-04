@@ -316,16 +316,6 @@ $input-font-size: 1.6rem;
 
 				border: none;
 			}
-
-			// .iti__country {
-			// 	font-size: 0;
-			// 	display: flex;
-			// 	align-items: center;
-			// }
-
-			// .iti__country-name, .iti__dial-code {
-			// 	font-size: 1.6rem;
-			// }
 		}
 
 		.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
@@ -418,7 +408,7 @@ $input-font-size: 1.6rem;
 	}
 
 	label.error {
-		font-size: 1.2rem;
+		@extend %fs-t3;
 
 		position: absolute;
 		top: 100%;
