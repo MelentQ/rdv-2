@@ -2,12 +2,14 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.8rem;
+  gap: 1.4rem;
 
   &__link {
     position: relative;
 
     transition: color 0.3s ease;
+
+    @extend %fs-t2;
 
     &:link,
     &:visited {
@@ -31,7 +33,7 @@
 
       position: absolute;
       top: 0;
-      right: -1.2rem;
+      right: -1rem;
 
       color: #85B0C2;
     }

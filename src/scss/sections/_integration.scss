@@ -22,7 +22,7 @@
     gap: 2rem;
 
     @include breakpoint(tablet) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
     }
 
     @include breakpoint(mobile) {
@@ -39,14 +39,19 @@
     padding: 5.5rem 0 4rem;
 
     @include breakpoint(tablet) {
-      grid-column: span 2;
+      grid-column: span 1;
 
       padding: 2.5rem 0 3rem;
     }
 
     @include breakpoint(mobile) {
-      grid-column: span 1;
       padding: 2.5rem 0;
+    }
+  }
+
+  &__heading {
+    @include breakpoint(mobile) {
+      position: relative;
     }
   }
 
@@ -60,8 +65,9 @@
     @extend %fs-t1;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 2px;
 
-    @include breakpoint(mobile) {
+    @include breakpoint(tablet) {
       display: none;
     }
   }
@@ -76,7 +82,7 @@
 
   &__description {
     position: relative;
-    margin-top: 4.5rem;
+    margin-top: 4rem;
     max-width: 58rem;
 
     @extend %fs-h4;
@@ -94,24 +100,62 @@
       background-color: $secondary-300;
     }
 
+    @include breakpoint(tablet) {
+      max-width: 38rem;
+
+      font-size: 1.6rem;
+    }
+
     @include breakpoint(mobile) {
       max-width: 24rem;
       font-size: 1.6rem;
     }
   }
 
+  &__heading-picture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    display: none;
+    margin-top: 2.5rem;
+    height: calc(100% - 7.5rem);
+    width: 100%;
+    max-width: 24rem;
+
+    pointer-events: none;
+
+    @include breakpoint(tablet) {
+      display: block;
+    }
+
+    @include breakpoint(mobile) {
+      margin-top: 0;
+      width: 20rem;
+      height: calc(100% + 1rem);
+      margin-right: -4rem;
+    }
+  }
+
   &__buttons {
-    margin-top: 4rem;
+    margin-top: 4.2rem;
 
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
 
+    @include breakpoint(tablet) {
+      gap: 1.6rem;
+      margin-top: 2.8rem;
+    }
+
     @include breakpoint(mobile) {
       flex-direction: column;
       align-items: stretch;
       flex-wrap: nowrap;
+      gap: 2rem;
     }
   }
 
@@ -123,36 +167,32 @@
     font-style: italic;
 
     @include breakpoint(tablet) {
+      flex-basis: 80%;
       max-width: unset;
+      font-weight: 700;
     }
 
     @include breakpoint(mobile) {
       text-align: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: -1rem;
     }
   }
 
   &__picture-block {
+    pointer-events: none;
     grid-column: span 5;
 
     position: relative;
     z-index: 1;
 
+    max-height: 45rem;
     height: 100%;
     width: 100%;
 
     @include breakpoint(tablet) {
-      grid-column: span 1;
-
-      margin-top: 2rem;
-      height: calc(100% - 4rem);
-    }
-
-    @include breakpoint(mobile) {
-      position: absolute;
-      top: 5rem;
-      right: 0;
-
-      width: 20rem;
+      display: none;
     }
   }
 
@@ -176,14 +216,7 @@
 
         display: block;
 
-        width: calc(100% + 4.8rem);
-        max-width: unset;
-      }
-
-      @include breakpoint(mobile) {
-        width: 100%;
-
-        object-position: center top;
+        object-position: right bottom;
       }
     }
   }
@@ -193,6 +226,14 @@
   }
 
   .button {
-    padding: 2.2rem 3rem;
+    padding: 2.4rem 3rem;
+    font-size: 1.4rem;
+    min-width: 19.6rem;
+
+    @include breakpoint(tablet) {
+      font-size: 1.2rem;
+      padding: 1.7rem 3rem;
+      min-width: 17.8rem;
+    }
   }
 }
