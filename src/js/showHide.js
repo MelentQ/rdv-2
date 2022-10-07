@@ -1,3 +1,5 @@
+import getCoords from "./getCoords";
+
 export default function showHide() {
   const containers = document.querySelectorAll('.js-show-hide');
   containers.forEach(container => {
@@ -24,6 +26,15 @@ export default function showHide() {
 
       button.addEventListener('click', () => {
         toggle()
+
+        if (button.classList.contains('active')) {
+          window.scrollTo({
+            top: getCoords(container).top,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }
+
         button.classList.toggle('active');
       })
     }

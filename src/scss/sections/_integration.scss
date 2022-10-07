@@ -5,15 +5,15 @@
   color: white;
 
   &--ozon {
-    background: linear-gradient(to left, #0069FF 16%, #174F77 100%);
+    background: linear-gradient(-74deg, #0069FF 16%, #174F77 100%);
   }
 
   &--yandex {
-    background: linear-gradient(to left, #209F66 16%, #174F77 100%);
+    background: linear-gradient(-74deg, #209F66 16%, #174F77 100%);
   }
 
   &--wb {
-    background: linear-gradient(to left, #D500B9 0%, #1668A3 100%);
+    background: linear-gradient(-74deg, #D500B9 0%, #1668A3 100%);
   }
 
   &__inner {
@@ -77,6 +77,7 @@
 
     @include breakpoint(mobile) {
       max-width: 35rem;
+      font-size: 3.4rem;
     }
   }
 

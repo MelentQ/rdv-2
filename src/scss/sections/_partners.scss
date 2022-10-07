@@ -35,10 +35,13 @@
 
   &__title {
     max-width: 48rem;
-    @extend %fs-t2;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.1;
 
     @include breakpoint(tablet) {
       max-width: unset;
+      font-size: 1.4rem;
       line-height: 1.2;
     }
 
