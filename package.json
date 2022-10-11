@@ -18,7 +18,7 @@
     "not dead"
   ],
   "dependencies": {
-    "@fancyapps/ui": "^4.0.26",
+    "@fancyapps/ui": "^4.0.31",
     "body-scroll-lock": "^3.1.5",
     "bootstrap-datepicker": "^1.9.0",
     "choices.js": "^10.1.0",
@@ -36,6 +36,7 @@
     "lodash": "^4.17.21",
     "parsleyjs": "^2.9.2",
     "plyr": "^3.6.8",
+    "sticky-js": "^1.3.0",
     "swiper": "^8.1.4"
   },
   "devDependencies": {

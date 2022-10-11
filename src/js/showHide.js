@@ -1,4 +1,7 @@
-import getCoords from "./getCoords";
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function showHide() {
   const containers = document.querySelectorAll('.js-show-hide');
@@ -28,10 +31,14 @@ export default function showHide() {
         toggle()
 
         if (button.classList.contains('active')) {
-          window.scrollTo({
-            top: getCoords(container).top,
-            left: 0,
-            behavior: 'smooth'
+          gsap.to(window, {
+            duration: 0.7,
+            ease: 'power2.out',
+            scrollTo: {
+              y: container,
+              autoKill: false,
+              offsetY: 40
+            }
           });
         }
 
@@ -40,6 +47,7 @@ export default function showHide() {
     }
 
     function toggle() {
+      container.classList.toggle('hidden');
       items[visibleCount - 1] && items[visibleCount - 1].classList.toggle('last')
       items.slice(visibleCount).forEach(item => {
         item.classList.toggle('hidden')

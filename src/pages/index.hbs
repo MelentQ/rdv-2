@@ -16,9 +16,15 @@
                         <img class="integration__picture integration__picture--mobile" src="img/content/integrations/wb-mobile.png" alt="Integration Picture">
                     </div>
                 </div>
-                <div class="integration__buttons">
-                    <button class="button">Заказать демо</button>
-                    <button class="button button--secondary">Тест-драйв</button>
+                <div class="integration__footer">
+                    <ul class="integration__buttons">
+                        <li>
+                            <a class="button" href="#">Заказать демо</a>
+                        </li>
+                        <li>
+                            <a class="button button--secondary" href="#">Тест-драйв</a>
+                        </li>
+                    </ul>
                     <span class="integration__label">Тестовый период 14&nbsp;дней бесплатно!</span>
                 </div>
             </div>
@@ -68,6 +74,138 @@
                 <span class="default-label">Посмотреть все</span>
                 <span class="active-label">Скрыть</span>
             </button>
+        </div>
+    </div>
+</section>
+
+<section class="video">
+    <div class="container">
+        <div class="video__inner">
+            <h2 class="video__title">Посмотрите видеообзоры по&nbsp;интеграции 1С с&nbsp;Wildberries</h2>
+            <div class="video__slider swiper js-video-slider loading">
+                <ul class="swiper-wrapper">
+                    {{#each video}}
+                        <li class="swiper-slide">
+                            <div class="video__slide">
+                                <div class="video__slide-iframe-wrapper">
+                                    <iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                                </div>
+                                <h3 class="video__slide-title">
+                                    <a href="#">{{this.title}}</a>
+                                </h3>
+                            </div>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tabs js-tabs">
+    <div class="container">
+        <h2 class="tabs__title">Чем RDV Маркет поможет продавцам в работе с Wildberries</h2>
+        <div class="tabs__inner" data-sticky-container>
+            <div class="tabs__navigation-wrapper">
+                <div class="js-sticky" data-margin-top="40">
+                    <div class="swiper">
+                        <ul class="tabs__navigation swiper-wrapper">
+                            {{#each tabs}}
+                                <li class="js-tab swiper-slide {{#if this.active}}active{{/if}}">
+                                    <span class="tabs__navigation-item">{{this.name}}</span>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <ul class="tabs__bodies">
+                {{#each tabs}}
+                    <li class="tabs__body js-body js-show-hide {{#if this.active}}active{{/if}}" data-count="2">
+                        <ul class="tabs__body-list">
+                            {{#each this.items}}
+                                <li class="tabs__body-item js-show-hide-item">
+                                    <div class="gallery">
+                                        <div class="gallery__content">
+                                            <h2 class="gallery__title">{{this.title}}</h2>
+                                            <div class="gallery__description">
+                                                {{{this.description}}}
+                                            </div>
+                                        </div>
+                                        <div class="gallery__slider swiper js-gallery loading">
+                                            <ul class="swiper-wrapper">
+                                                {{#each this.images}}
+                                                    <li class="swiper-slide">
+                                                        <div class="gallery__image-wrapper">
+                                                            <img src="{{this}}" alt="Gallery Image" data-src="https://via.placeholder.com/1920x1080" data-fancybox="gallery-{{../this.id}}">
+                                                        </div>
+                                                    </li>
+                                                {{/each}}
+                                            </ul>
+                                            <div class="gallery__placeholder show-on-mobile">
+                                                <svg width="30" height="30">
+                                                    <use xlink:href="#screen" />
+                                                </svg>
+                                                <span>{{this.label}}</span>
+                                            </div>
+                                            <div class="gallery__navigation">
+                                                <button class="gallery__navigation-item prev" type="button" title="Prev">
+                                                    <svg width="13" height="8">
+                                                        <use xlink:href="#chevron" />
+                                                    </svg>
+                                                </button>
+                                                <button class="gallery__navigation-item next" type="button" title="Next">
+                                                    <svg width="13" height="8">
+                                                        <use xlink:href="#chevron" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="gallery__pagination"></div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {{/each}}
+                        </ul>
+                        <button class="button button--stroke tabs__show-more js-show-hide-button" type="button">
+                            <span class="default-label">Посмотреть все</span>
+                            <span class="active-label">Скрыть</span>
+                        </button>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="call">
+    <div class="container">
+        <div class="call__inner">
+            <h2 class="call__title">Нужна помощь?</h2>
+            <div class="call__text">
+                <p>Выберите опции выше или оставьте заявку — наш менеджер поможет с расчетом и&nbsp;расскажет про нужные для вас модули.</p>
+            </div>
+            <button class="button" type="button" data-modal="#form1">Заказать звонок</button>
+        </div>
+    </div>
+</section>
+
+<section class="simple-intro">
+    <div class="container">
+        <div class="simple-intro__inner">
+            <div class="simple-intro__content">
+                <h2 class="simple-intro__title">Как подключиться самостоятельно</h2>
+                <div class="simple-intro__description">
+                    <p>Вы можете подключиться к RDV Маркет самостоятельно. Как это сделать — подробно описано в нашей Академии!</p>
+                </div>
+                <ul class="simple-intro__buttons">
+                    <li>
+                        <a class="button button--secondary" href="#">Подробнее</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="simple-intro__picture-block">
+                <img src="img/content/simple-intro/academy.png" alt="Simple Intro Picture">
+            </div>
         </div>
     </div>
 </section>

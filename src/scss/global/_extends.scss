@@ -54,6 +54,16 @@
   }
 }
 
+%fs-h5 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 700;
+
+  @media screen and (max-width: 1359px) {
+    font-size: 1.6rem;
+  }
+}
+
 %fs-t1 {
   font-size: 1.6rem;
   line-height: 1.4;
