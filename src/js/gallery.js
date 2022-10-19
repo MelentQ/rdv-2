@@ -1,44 +1,65 @@
 import {EffectFade, Navigation, Pagination, Swiper} from "swiper";
+import window from "inputmask/lib/global/window";
 
 export default function gallery() {
   const containers = document.querySelectorAll('.js-gallery');
   containers.forEach(container => {
     if ([...container.querySelectorAll('.swiper-slide')].length > 1) {
-      new Swiper(container, {
-        loop: false,
-        speed: 500,
-        slidesPerView: 1,
-        spaceBetween: 0,
-        modules: [Navigation, Pagination, EffectFade],
-        navigation: {
-          nextEl: container.querySelector('.gallery__navigation .next'),
-          prevEl: container.querySelector('.gallery__navigation .prev'),
-          disabledClass: "disabled"
-        },
-        pagination: {
-          el: container.querySelector('.gallery__pagination'),
-          type: 'bullets',
-          clickable: true,
-          renderBullet: function (index, className) {
-            return `<button class="${className}" type="button" title="Скриншот №${++index}"></button>`
-          },
-          bulletClass: "gallery__pagination-item",
-          bulletActiveClass: "active"
-        },
-        effect: 'fade',
-        fadeEffect: {
-          crossFade: true
-        },
-        on: {
-          init: function (swiper) {
-            swiper.el.classList.remove("loading")
-          },
-        },
-      });
+      if (container.classList.contains('js-gallery-only-desktop')) {
+        console.log('123');
+        if (window.matchMedia('screen and (min-width: 670px)').matches) {
+          init(container)
+        } else {
+          reset(container)
+        }
+      } else {
+        init(container)
+      }
     } else {
-      container.classList.remove('loading');
-      container.querySelector('.gallery__navigation').remove();
-      container.querySelector('.gallery__pagination').remove();
+      reset(container)
     }
+
   })
+
+  function reset(container) {
+    container.classList.add('not-initialized')
+    container.classList.remove('loading');
+    container.querySelector('.navigation').remove();
+    container.querySelector('.pagination').remove();
+  }
+
+  function init(container) {
+    new Swiper(container, {
+      loop: false,
+      speed: 500,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      autoHeight: true,
+      modules: [Navigation, Pagination, EffectFade],
+      navigation: {
+        nextEl: container.querySelector('.next'),
+        prevEl: container.querySelector('.prev'),
+        disabledClass: "disabled"
+      },
+      pagination: {
+        el: container.querySelector('.pagination'),
+        type: 'bullets',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<button class="${className}" type="button" title="Скриншот №${++index}"></button>`
+        },
+        bulletClass: "pagination__item",
+        bulletActiveClass: "active"
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      on: {
+        init: function (swiper) {
+          swiper.el.classList.remove("loading")
+        },
+      },
+    });
+  }
 }

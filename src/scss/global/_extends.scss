@@ -8,7 +8,7 @@
   }
 
   @media screen and (max-width: 1099px) {
-    font-size: 3rem;
+    font-size: 3.4rem;
   }
 }
 
@@ -22,7 +22,7 @@
   }
 
   @media screen and (max-width: 1099px) {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
 }
 
@@ -42,7 +42,7 @@
 
 %fs-h4 {
   font-weight: 700;
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 1.2;
 
   @media screen and (max-width: 1359px) {
@@ -50,7 +50,7 @@
   }
 
   @media screen and (max-width: 1099px) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -67,6 +67,10 @@
 %fs-t1 {
   font-size: 1.6rem;
   line-height: 1.4;
+
+  @media screen and (max-width: 1099px) {
+    font-size: 1.4rem;
+  }
 }
 
 %fs-t2 {

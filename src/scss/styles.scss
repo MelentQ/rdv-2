@@ -20,6 +20,15 @@
 @import 'components/modal';
 @import 'components/breadcrumbs';
 @import "components/gallery";
+@import "components/navigation";
+@import "components/pagination";
+@import "components/image-wrapper";
+@import "components/card";
+@import "components/slider";
+@import "components/remarks";
+@import "components/text-container";
+@import "components/buttons";
+@import "components/numbered-list";
 
 @import 'sections/form';
 @import 'sections/two-columns';
@@ -30,3 +39,4 @@
 @import "sections/call";
 @import "sections/simple-intro";
 @import "sections/tabs";
+@import "sections/links-list";

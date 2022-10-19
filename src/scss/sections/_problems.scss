@@ -104,7 +104,7 @@
     background-color: #F0F5F7;
 
     @extend %fs-t1;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.1;
 
     @include breakpoint(mobile) {

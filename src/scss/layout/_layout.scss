@@ -24,3 +24,33 @@
 .page-main {
     flex-grow: 1;
 }
+
+.text-content-wrapper {
+    .remarks {
+        margin-top: 4rem;
+
+        @include breakpoint(tablet) {
+            margin-top: 2rem;
+        }
+    }
+
+    .buttons {
+        margin-top: 6rem;
+
+        @include breakpoint(tablet) {
+            margin-top: 3rem;
+        }
+
+        .button {
+            padding: 2.4rem 3rem;
+            font-size: 1.4rem;
+            min-width: 17.9rem;
+
+            @include breakpoint(tablet) {
+                font-size: 1.2rem;
+                padding: 1.7rem 3rem;
+                width: 100%;
+            }
+        }
+    }
+}

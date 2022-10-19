@@ -67,6 +67,8 @@
     border-left: 0.6rem solid #F0F5F7;
     transition: color 0.3s ease, border-color 0.3s ease;
 
+    cursor: pointer;
+
     @extend %fs-h4;
 
     @include breakpoint(tablet) {
@@ -74,10 +76,6 @@
       border-bottom: 0.4rem solid #F0F5F7;
       padding: 0.6rem 0;
       justify-content: center;
-    }
-
-    &:focus {
-      box-shadow: none;
     }
 
     &:hover {
@@ -162,6 +160,7 @@
     }
   }
 
+  .button.js-show-hide-button,
   &__show-more {
     position: relative;
     z-index: 3;
