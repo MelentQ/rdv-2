@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="css/styles.css" />
     <title>
-        Формы
+        Нумерованные списки и булиты
     </title>
 </head>
 
@@ -28,148 +28,231 @@
         </header>
         <main class="page-main">
 
-        <section class="form">
+        <section class="section section--debug ">
             <div class="container">
-                <h2 class="form__title">Ваша заявка</h2>
-                <form class="form__form js-lock-form js-handle-form" data-need-validation>
-                    <input name="page" type="hidden" value="/">
-                    <fieldset class="form__grid-inputs">
-                        <div class="form__input-wrapper js-validation-wrapper">
-                            <svg class="form__input-icon">
-                                <use xlink:href="#form-1" />
-                            </svg>
-                            <input class="form__input" name="name" type="text" placeholder="Ваше имя"
-                                   data-parsley-pattern="^[а-яА-ЯA-Za-z ]+$" required>
-                            <svg class="form__input-validation-icon">
-                                <use xlink:href="#check" />
-                            </svg>
+                <div class="section__inner">
+                        <div class="section__heading-block">
+                            <h2 class="section__heading">Чтобы начать работать
+        с RDV Маркет</h2>
                         </div>
-                        <div class="form__input-wrapper js-validation-wrapper">
-                            <svg class="form__input-icon">
-                                <use xlink:href="#form-2" />
-                            </svg>
-                            <input class="form__input" name="company" type="text" placeholder="Название компании" required>
-                            <svg class="form__input-validation-icon">
-                                <use xlink:href="#check" />
-                            </svg>
-                        </div>
-                        <div class="input input--phone">
-                            <svg class="form__input-icon">
-                                <use xlink:href="#form-3" />
-                            </svg>
-                            <input class="input__control js-old-input" name="phone" type="tel" data-input=""
-                                   placeholder="Телефон" autocomplete="off" required data-parsley-phone>
-                            <label class="input__placeholder">Телефон</label>
-                            <svg class="form__input-validation-icon">
-                                <use xlink:href="#check" />
-                            </svg>
-                        </div>
-                        <div class="form__input-wrapper js-validation-wrapper">
-                            <svg class="form__input-icon">
-                                <use xlink:href="#form-4" />
-                            </svg>
-                            <input class="form__input" name="email" type="email" placeholder="Ваш корпоративный E-mail"
-                                   required>
-                            <svg class="form__input-validation-icon">
-                                <use xlink:href="#check" />
-                            </svg>
-                        </div>
-                        <div class="form__input-wrapper js-validation-wrapper">
-                            <svg class="form__input-icon">
-                                <use xlink:href="#form-5" />
-                            </svg>
-                            <input class="form__input" name="site" type="url" placeholder="Ваш сайт" required>
-                            <svg class="form__input-validation-icon">
-                                <use xlink:href="#check" />
-                            </svg>
-                        </div>
-                    </fieldset>
-        
-                    <div class="form__input-wrapper js-validation-wrapper">
-                        <svg class="form__input-icon">
-                            <use xlink:href="#form-6" />
-                        </svg>
-                        <textarea class="form__textarea" name="message" placeholder="Опишите свои задачи" required></textarea>
-                        <svg class="form__input-validation-icon">
-                            <use xlink:href="#check" />
-                        </svg>
+                    <div class="section__grid">
+                            <div class="section__image">
+                                <img src="img/content/illustrations/1.png" alt="Section Image">
+                            </div>
+                            <div class="section__gap"></div>
+                            <div class="section__content">
+                <ol class="bullet-list">
+                    <li class="bullet-list__item">
+                        Оставьте заявку на сайте
+                    </li>
+                    <li class="bullet-list__item">
+                        Мы предоставим вам решение для интеграции 1С с маркетплейсами с бесплатным периодом 14 дней
+                    </li>
+                    <li class="bullet-list__item">
+                        Проведем для вас обучение процессам самостоятельного подключения
+                    </li>
+                    <li class="bullet-list__item">
+                        Выполните простые 10 шагов в системе RDV Маркет и подключите первый маркетплейс
+                    </li>
+                    <li class="bullet-list__item">
+                        Оплатите счет по выбранному тарифу
+                    </li>
+                    <li class="bullet-list__item">
+                        Продолжайте масштабироваться: подключайте новые маркетплейсы и обрабатывайте все больше заказов
+                    </li>
+                </ol>
+                            </div>
                     </div>
-        
-                    <button class="form__submit-button js-submit-form" type="submit">
-                        <span>Отправить</span>
-                        <svg width="9" height="14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="m1 1 6 6-6 6" />
-                        </svg>
-                    </button>
-        
-                    <div class="form__policy-wrapper">
-                        <label class="form__policy js-validation-wrapper">
-                            <input class="js-lock-form-input" name="policy" type="checkbox" required checked>
-                            <span class="form__checkmark"></span>
-                            <span>Отправляя заявку, вы даете свое согласие на обработку <a href="#" target="_blank">персональных
-                                    данных</a> и соглашаетесь с <a href="#" target="_blank">условиями оферты</a>.</span>
-                        </label>
-                    </div>
-                </form>
+                </div>
             </div>
         </section>
-        <section class="two-columns">
+        <section class="section section--narrow-image section--debug ">
             <div class="container">
-                <div class="two-columns__inner">
-                    <div class="two-columns__text-block">
-                        <h2 class="two-columns__title">Оставьте, пожалуйста, ваши контакты и опишите текущие сложности по работе со складом</h2>
-                        <div class="two-columns__text">
-                            <p>Мы с вами свяжемся и обсудим все детали</p>
+                <div class="section__inner">
+                        <div class="section__heading-block">
+                            <h2 class="section__heading">Чтобы начать работать
+        с RDV Маркет</h2>
                         </div>
-                        <div class="two-columns__image-wrapper">
-                            <img class="two-columns__image" src="img/content/forms/form-picture.png" alt="Form Picture">
-                        </div>
+                    <div class="section__grid">
+                            <div class="section__image">
+                                <img src="img/content/illustrations/1.png" alt="Section Image">
+                            </div>
+                            <div class="section__gap"></div>
+                            <div class="section__content">
+                <ol class="bullet-list">
+                    <li class="bullet-list__item">
+                        Оставьте заявку на сайте
+                    </li>
+                    <li class="bullet-list__item">
+                        Мы предоставим вам решение для интеграции 1С с маркетплейсами с бесплатным периодом 14 дней
+                    </li>
+                    <li class="bullet-list__item">
+                        Проведем для вас обучение процессам самостоятельного подключения
+                    </li>
+                    <li class="bullet-list__item">
+                        Выполните простые 10 шагов в системе RDV Маркет и подключите первый маркетплейс
+                    </li>
+                    <li class="bullet-list__item">
+                        Оплатите счет по выбранному тарифу
+                    </li>
+                    <li class="bullet-list__item">
+                        Продолжайте масштабироваться: подключайте новые маркетплейсы и обрабатывайте все больше заказов
+                    </li>
+                </ol>
+                            </div>
                     </div>
-                    <div class="two-columns__content-block">
-                        <form class="old-form js-handle-form" data-need-validation>
-                          <input name="page" type="hidden" value="/">
-                          <div class="old-form__grid">
-                            <div class="input">
-                              <input class="input__control js-old-input" name="name" type="text" data-input="" placeholder="Имя"
-                                autocomplete="off" data-parsley-pattern="^[а-яА-ЯA-Za-z ]+$" required>
-                              <label class="input__placeholder">Имя</label>
+                </div>
+            </div>
+        </section>
+        <section class="section section--super-narrow-image section--debug ">
+            <div class="container">
+                <div class="section__inner">
+                        <div class="section__heading-block">
+                            <h2 class="section__heading">Чтобы начать работать
+        с RDV Маркет</h2>
+                        </div>
+                    <div class="section__grid">
+                            <div class="section__image">
+                                <img src="img/content/illustrations/1.png" alt="Section Image">
                             </div>
-                            <div class="input">
-                              <input class="input__control js-old-input" name="company" type="text" data-input=""
-                                placeholder="Название компании" autocomplete="off" required>
-                              <label class="input__placeholder">Название компании</label>
+                            <div class="section__gap"></div>
+                            <div class="section__content">
+                <ol class="bullet-list">
+                    <li class="bullet-list__item">
+                        Оставьте заявку на сайте
+                    </li>
+                    <li class="bullet-list__item">
+                        Мы предоставим вам решение для интеграции 1С с маркетплейсами с бесплатным периодом 14 дней
+                    </li>
+                    <li class="bullet-list__item">
+                        Проведем для вас обучение процессам самостоятельного подключения
+                    </li>
+                    <li class="bullet-list__item">
+                        Выполните простые 10 шагов в системе RDV Маркет и подключите первый маркетплейс
+                    </li>
+                    <li class="bullet-list__item">
+                        Оплатите счет по выбранному тарифу
+                    </li>
+                    <li class="bullet-list__item">
+                        Продолжайте масштабироваться: подключайте новые маркетплейсы и обрабатывайте все больше заказов
+                    </li>
+                </ol>
                             </div>
-                            <div class="input input--phone">
-                              <input class="input__control js-old-input" name="phone" type="tel" data-input="" placeholder="Телефон"
-                                autocomplete="off" required data-parsley-phone>
-                              <label class="input__placeholder">Телефон</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section--debug ">
+            <div class="container">
+                <div class="section__inner">
+                    <div class="section__grid">
+                            <div class="section__content">
+                                <div class="section__heading-block">
+                                    <h2 class="section__heading">Чтобы начать работать
+        с RDV Маркет</h2>
+                                </div>
+                <ol class="bullet-list">
+                    <li class="bullet-list__item">
+                        Оставьте заявку на сайте
+                    </li>
+                    <li class="bullet-list__item">
+                        Мы предоставим вам решение для интеграции 1С с маркетплейсами с бесплатным периодом 14 дней
+                    </li>
+                    <li class="bullet-list__item">
+                        Проведем для вас обучение процессам самостоятельного подключения
+                    </li>
+                    <li class="bullet-list__item">
+                        Выполните простые 10 шагов в системе RDV Маркет и подключите первый маркетплейс
+                    </li>
+                    <li class="bullet-list__item">
+                        Оплатите счет по выбранному тарифу
+                    </li>
+                    <li class="bullet-list__item">
+                        Продолжайте масштабироваться: подключайте новые маркетплейсы и обрабатывайте все больше заказов
+                    </li>
+                </ol>
                             </div>
-                            <div class="input">
-                              <input class="input__control js-old-input" type="email" data-input="" placeholder="Корпоративный Email"
-                                autocomplete="off" required name="email">
-                              <label class="input__placeholder">Корпоративный Email</label>
+                            <div class="section__gap"></div>
+                            <div class="section__image">
+                                <img src="img/content/illustrations/1.png" alt="Section Image">
                             </div>
-                            <div class="input">
-                              <input class="input__control js-old-input" type="url" data-input="" placeholder="Сайт" autocomplete="off"
-                                name="site">
-                              <label class="input__placeholder">Сайт</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section--narrow-image section--debug ">
+            <div class="container">
+                <div class="section__inner">
+                    <div class="section__grid">
+                            <div class="section__content">
+                                <div class="section__heading-block">
+                                    <h2 class="section__heading">Чтобы начать работать
+        с RDV Маркет</h2>
+                                </div>
+                <ol class="bullet-list">
+                    <li class="bullet-list__item">
+                        Оставьте заявку на сайте
+                    </li>
+                    <li class="bullet-list__item">
+                        Мы предоставим вам решение для интеграции 1С с маркетплейсами с бесплатным периодом 14 дней
+                    </li>
+                    <li class="bullet-list__item">
+                        Проведем для вас обучение процессам самостоятельного подключения
+                    </li>
+                    <li class="bullet-list__item">
+                        Выполните простые 10 шагов в системе RDV Маркет и подключите первый маркетплейс
+                    </li>
+                    <li class="bullet-list__item">
+                        Оплатите счет по выбранному тарифу
+                    </li>
+                    <li class="bullet-list__item">
+                        Продолжайте масштабироваться: подключайте новые маркетплейсы и обрабатывайте все больше заказов
+                    </li>
+                </ol>
                             </div>
-                            <div class="input">
-                              <textarea class="input__control input__control--textarea js-old-input" data-input="" placeholder="Ваши задачи"
-                                required name="comment"></textarea>
-                              <label class="input__placeholder">Ваши задачи</label>
+                            <div class="section__gap"></div>
+                            <div class="section__image">
+                                <img src="img/content/illustrations/1.png" alt="Section Image">
                             </div>
-                            <button class="button js-submit-form" type="submit">
-                              <span>Отправить заявку</span>
-                            </button>
-                            <div class="old-form__policy">
-                              Отправляя заявку, вы даете свое согласие на обработку <a href="#" target="_blank">персональных
-                                данных</a> и соглашаетесь с <a href="#" target="_blank">политикой конфеденциальности и
-                                обработки
-                                персональных данных компании</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section section--super-narrow-image section--debug ">
+            <div class="container">
+                <div class="section__inner">
+                    <div class="section__grid">
+                            <div class="section__content">
+                                <div class="section__heading-block">
+                                    <h2 class="section__heading">Чтобы начать работать
+        с RDV Маркет</h2>
+                                </div>
+                <ol class="bullet-list">
+                    <li class="bullet-list__item">
+                        Оставьте заявку на сайте
+                    </li>
+                    <li class="bullet-list__item">
+                        Мы предоставим вам решение для интеграции 1С с маркетплейсами с бесплатным периодом 14 дней
+                    </li>
+                    <li class="bullet-list__item">
+                        Проведем для вас обучение процессам самостоятельного подключения
+                    </li>
+                    <li class="bullet-list__item">
+                        Выполните простые 10 шагов в системе RDV Маркет и подключите первый маркетплейс
+                    </li>
+                    <li class="bullet-list__item">
+                        Оплатите счет по выбранному тарифу
+                    </li>
+                    <li class="bullet-list__item">
+                        Продолжайте масштабироваться: подключайте новые маркетплейсы и обрабатывайте все больше заказов
+                    </li>
+                </ol>
                             </div>
-                          </div>
-                        </form>            </div>
+                            <div class="section__gap"></div>
+                            <div class="section__image">
+                                <img src="img/content/illustrations/1.png" alt="Section Image">
+                            </div>
+                    </div>
                 </div>
             </div>
         </section>
