@@ -10,6 +10,8 @@
 @import 'global/utils';
 @import 'global/animations';
 
+@import "global/section";
+
 @import 'layout/layout';
 @import 'layout/header';
 @import 'layout/footer';
@@ -29,6 +31,9 @@
 @import "components/text-container";
 @import "components/buttons";
 @import "components/numbered-list";
+@import "components/simple-numbered-list";
+@import "components/simple-bulleted-list";
+@import "components/heading";
 
 @import 'sections/form';
 @import 'sections/two-columns';

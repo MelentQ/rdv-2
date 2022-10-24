@@ -32,6 +32,18 @@
     box-shadow: none;
   }
 
+  &--bold {
+    padding: 2.4rem 3rem;
+    font-size: 1.4rem;
+    min-width: 17.9rem;
+
+    @include breakpoint(mobile) {
+      font-size: 1.2rem;
+      padding: 1.7rem 3rem;
+      width: 100%;
+    }
+  }
+
   &--stroke {
     background-color: $grayscale-100;
     color: $primary-300;

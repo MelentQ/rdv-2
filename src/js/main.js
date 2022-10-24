@@ -11,10 +11,12 @@ import videoSlider from "./videoSlider";
 import tabs from "./tabs";
 import gallery from "./gallery";
 import sticky from "./sticky";
+import numberedListLine from "./numberedListLine";
 
 document.addEventListener('DOMContentLoaded', function () {
   window.rdv = {
-    info: "Функции для вызова на беке"
+    info: "Функции для вызова на беке",
+    isAdmin: document.body.classList.contains('is-admin')
   };
   
   masks();
@@ -29,4 +31,5 @@ document.addEventListener('DOMContentLoaded', function () {
   tabs();
   gallery();
   sticky();
+  numberedListLine();
 });

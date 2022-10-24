@@ -4,21 +4,25 @@ import window from "inputmask/lib/global/window";
 export default function gallery() {
   const containers = document.querySelectorAll('.js-gallery');
   containers.forEach(container => {
-    if ([...container.querySelectorAll('.swiper-slide')].length > 1) {
-      if (container.classList.contains('js-gallery-only-desktop')) {
-        console.log('123');
-        if (window.matchMedia('screen and (min-width: 670px)').matches) {
-          init(container)
+    console.log(container.classList.contains('js-disable-if-admin'));
+    console.log(window.rdv.isAdmin)
+    if (!(container.classList.contains('js-disable-if-admin') && window.rdv.isAdmin)) {
+      if ([...container.querySelectorAll('.swiper-slide')].length > 1) {
+        if (container.classList.contains('js-gallery-only-desktop')) {
+          if (window.matchMedia('screen and (min-width: 670px)').matches) {
+            init(container)
+          } else {
+            reset(container)
+          }
         } else {
-          reset(container)
+          init(container)
         }
       } else {
-        init(container)
+        reset(container)
       }
     } else {
       reset(container)
     }
-
   })
 
   function reset(container) {

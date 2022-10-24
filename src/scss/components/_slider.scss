@@ -30,3 +30,8 @@
     }
   }
 }
+
+.is-admin .slider .swiper-wrapper {
+  flex-direction: column;
+  gap: 2rem;
+}

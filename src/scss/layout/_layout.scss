@@ -25,6 +25,10 @@
     flex-grow: 1;
 }
 
+.default-margins {
+    margin: var(--s-0) 0;
+}
+
 .text-content-wrapper {
     .remarks {
         margin-top: 4rem;

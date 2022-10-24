@@ -1,4 +1,5 @@
 {
+  "isAdmin": "",
   "title": "New Page",
   "slider": [
     {
@@ -162,5 +163,57 @@
         }
       ]
     }
+  ],
+  "sections": {
+    "numberedLeft": {
+      "mods": "section--narrow-image section--heading-line",
+      "bemClass": "",
+      "title": "Чтобы начать работать\nс RDV Маркет",
+      "image": {
+        "url": "img/content/illustrations/3.png"
+      }
+    },
+    "numberedRight": {
+      "mods": "section--super-narrow-image",
+      "bemClass": "",
+      "title": "Чтобы начать работать\nс RDV Маркет",
+      "image": {
+        "left": true,
+        "url": "img/content/illustrations/3.png"
+      }
+    },
+    "bulletedLeft": {
+      "mods": "section--grey section--heading-line",
+      "bemClass": "",
+      "title": "Возможности RDV Маркет для продавцов на маркетплейсах",
+      "image": {
+        "url": "img/content/illustrations/4.png"
+      }
+    },
+    "bulletedRight": {
+      "mods": "section--grey section--narrow-image",
+      "bemClass": "",
+      "title": "Возможности RDV Маркет для продавцов на маркетплейсах",
+      "image": {
+        "left": true,
+        "url": "img/content/illustrations/4.png"
+      }
+    }
+  },
+  "simpleNumberedList": [
+    "<p>Оставьте заявку на сайте</p>",
+    "<p>Мы предоставим вам решение для интеграции 1С с маркетплейсами с бесплатным периодом 14 дней</p>",
+    "<p>Проведем для вас обучение процессам самостоятельного подключения</p>",
+    "<p>Выполните простые 10 шагов в системе RDV Маркет и подключите первый маркетплейс</p>",
+    "<p>Оплатите счет по выбранному тарифу</p>",
+    "<p>Продолжайте масштабироваться: подключайте новые маркетплейсы и обрабатывайте все больше заказов</p>"
+  ],
+  "simpleBulletedList": [
+    "<p>Обновление остатков и цен по товарам в режиме онлайн</p>",
+    "<p>Обработка большого числа заказов</p>",
+    "<p>Комплектация и отгрузка отправлений происходит точно в срок</p>",
+    "<p>Контроль взаиморасчетов с маркетплейсами</p>",
+    "<p>Глубокая аналитика продаж</p>",
+    "<p>Автоматизация процессов бухгалтерии и формирования отчетности</p>"
   ]
 }

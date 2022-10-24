@@ -24,7 +24,7 @@
                 <h2 class="two-columns__bold-title">Преимущества работы с RDV Маркет в облаке</h2>
                 <div class="two-columns__inner">
                     <div class="two-columns__left">
-                        <div class="slider swiper loading js-gallery js-gallery-only-desktop js-show-hide js-show-hide--mobile" data-count="2">
+                        <div class="slider swiper loading js-gallery js-gallery-only-desktop js-disable-if-admin js-show-hide js-show-hide--mobile" data-count="2">
                             <ul class="swiper-wrapper">
                                 {{#each slider}}
                                     <li class="slider__slide swiper-slide js-show-hide-item">
@@ -109,6 +109,10 @@
                 </div>
             </div>
         </section>
+
+        {{>sections/simple-numbered-list data=sections.numberedLeft}}
+
+        {{>sections/simple-numbered-list data=sections.numberedRight}}
 
     {{/content}}
 {{/extend}}

@@ -15,3 +15,11 @@
     gap: 2rem;
   }
 }
+
+.buttons--offset-top {
+  margin-top: 6rem;
+
+  @include breakpoint(tablet) {
+    margin-top: 3rem;
+  }
+}
