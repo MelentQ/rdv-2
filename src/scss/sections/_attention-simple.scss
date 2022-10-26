@@ -1,0 +1,48 @@
+.attention-simple {
+  margin: var(--s-0) 0;
+
+  &__inner {
+    background-color: #1D7CAA;
+    border-radius: 1.6rem;
+    padding: 0 4rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    min-height: 10.6rem;
+
+    @include breakpoint(tablet) {
+      padding: 0 2.5rem;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  }
+
+  &__image {
+    height: 10.6rem;
+    width: auto;
+    max-width: 14.2rem;
+
+    object-fit: contain;
+
+    @include breakpoint(tablet) {
+      margin-top: 2.5rem;
+      height: 7.6rem;
+      max-width: 10.1rem;
+    }
+  }
+
+  &__text {
+    padding: 4rem 0;
+    color: $grayscale-100;
+    @extend %fs-h4;
+    font-weight: 400;
+
+    b {
+      font-weight: 700;
+    }
+
+    @include breakpoint(tablet) {
+      padding: 2.5rem 0;
+    }
+  }
+}

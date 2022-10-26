@@ -12,6 +12,7 @@ import tabs from "./tabs";
 import gallery from "./gallery";
 import sticky from "./sticky";
 import numberedListLine from "./numberedListLine";
+import Accordions from "./Accordions";
 
 document.addEventListener('DOMContentLoaded', function () {
   window.rdv = {
@@ -32,4 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
   gallery();
   sticky();
   numberedListLine();
+  initFaqAccordions();
 });
+
+function initFaqAccordions() {
+  const containers = document.querySelectorAll('.faq');
+  containers.forEach(container => {
+    new Accordions({container})
+  })
+}

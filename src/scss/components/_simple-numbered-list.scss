@@ -33,7 +33,7 @@
 
   &__item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 2rem;
 
     @include breakpoint(tablet) {
@@ -66,12 +66,7 @@
   }
 
   &__content {
-    padding-top: 0.88rem;
     color: $grayscale-700;
     @extend %fs-t1;
-
-    @include breakpoint(tablet) {
-      padding-top: 0.52rem;
-    }
   }
 }
