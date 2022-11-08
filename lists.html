@@ -57,7 +57,130 @@
         <div class="page-content">
 
             <header class="header">
-                <div class="container"></div>
+                <div class="container">
+                    <div class="header__top">
+                        <a class="header__logo" href="#">
+                            <img src="img/logo.svg" width="146" height="43" alt="">
+                        </a>
+                        <ul class="buttons">
+                            <li>
+                                <a class="button button--secondary" href="#">Оставить заявку</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="header__navigation">
+                        <button class="header__burger" type="button" data-modal="#menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <nav class="menu">
+                            <ul class="menu__links">
+                                <li class="menu__item menu__item--has-submenu">
+                                    <a class="menu__head" href="#">
+                                        <span>Услуги</span>
+                                    </a>
+                                    <ul class="menu__submenu">
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <span class="accent">Просто текст</span>
+                                                </li>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ссылка 2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ссылка 3</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 4</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ссылка 5</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ссылка 6</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 7</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ссылка 8</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Ссылка 9</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item menu__item--has-submenu">
+                                    <a class="menu__head" href="#">
+                                        <span>Проекты</span>
+                                    </a>
+                                    <ul class="menu__submenu">
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 10</a>
+                                                </li>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 11</a>
+                                                </li>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 12</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 13</a>
+                                                </li>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 14</a>
+                                                </li>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 15</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 16</a>
+                                                </li>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 17</a>
+                                                </li>
+                                                <li>
+                                                    <a class="accent" href="#">Ссылка 18</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu__item">
+                                    <a class="menu__head" href="#">
+                                        <span>Продукты</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </header>
 
             <main class="page-main">
@@ -420,6 +543,123 @@
                         </button>
                         <h2 class="modal__title">Ошибка...</h2>
                         <p>При отправке формы произошла ошибка. Попробуйте еще раз</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hystmodal modal modal--full-screen" id="menu" aria-hidden="true">
+                <div class="hystmodal__wrap modal__wrapper">
+                    <div class="hystmodal__window modal__window" role="dialog" aria-modal="true">
+                        <div class="container">
+                            <button data-hystclose class="modal__close" title="Закрыть">
+                                <svg>
+                                    <use xlink:href="#close" />
+                                </svg>
+                            </button>
+                            <nav class="menu">
+                                <ul class="menu__links">
+                                    <li class="menu__item menu__item--has-submenu">
+                                        <a class="menu__head" href="#">
+                                            <span>Услуги</span>
+                                        </a>
+                                        <ul class="menu__submenu">
+                                            <li>
+                                                <ul>
+                                                    <li>
+                                                        <span class="accent">Просто текст</span>
+                                                    </li>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 1</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Ссылка 2</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Ссылка 3</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 4</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Ссылка 5</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Ссылка 6</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 7</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Ссылка 8</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Ссылка 9</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__item menu__item--has-submenu">
+                                        <a class="menu__head" href="#">
+                                            <span>Проекты</span>
+                                        </a>
+                                        <ul class="menu__submenu">
+                                            <li>
+                                                <ul>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 10</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 11</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 12</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 13</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 14</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 15</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 16</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 17</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="accent" href="#">Ссылка 18</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a class="menu__head" href="#">
+                                            <span>Продукты</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
