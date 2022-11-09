@@ -21,6 +21,7 @@
   &__question {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 3rem;
 
     cursor: pointer;

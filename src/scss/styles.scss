@@ -1,5 +1,7 @@
 @import 'old/input';
 
+@import "global/legacy";
+
 @import 'global/fonts';
 @import 'global/mixins';
 @import 'global/variables';
@@ -35,6 +37,8 @@
 @import "components/simple-bulleted-list";
 @import "components/heading";
 @import "components/faq";
+@import "components/menu";
+@import "components/socials";
 
 @import 'sections/form';
 @import 'sections/two-columns';
@@ -52,3 +56,8 @@
 @import "sections/columns";
 @import "sections/icon-cards";
 @import "sections/card-links";
+@import "sections/buttons-section";
+@import "sections/comparison";
+@import "sections/intro-video";
+@import "sections/text";
+@import "sections/image";

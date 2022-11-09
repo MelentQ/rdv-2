@@ -174,3 +174,11 @@
 
   }
 }
+
+.section--hide-image-on-mobile {
+  .section__image {
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+}

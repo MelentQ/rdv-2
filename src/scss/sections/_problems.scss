@@ -42,6 +42,10 @@
   &__title {
     color: $primary-900;
     @extend %fs-h2;
+
+    &--offset-bottom {
+      margin-bottom: 4rem;
+    }
   }
 
   &__picture-wrapper {

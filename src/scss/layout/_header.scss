@@ -1,10 +1,71 @@
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 
-  min-height: 10rem;
+    padding-top: 2.8rem;
+    padding-bottom: 1rem;
 
-  @extend %fs-h4;
-  background-color: #f0f0f0;
+    @include breakpoint(small-mobile) {
+      .button {
+        display: none;
+      }
+    }
+  }
+
+  &__logo {
+    &:focus {
+      box-shadow: none;
+    }
+    img {
+      width: 14.6rem;
+      height: auto;
+      object-fit: contain;
+
+      @include breakpoint(small-mobile) {
+        width: 12.8rem;
+      }
+    }
+  }
+
+  &__burger {
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 3rem;
+    height: 3rem;
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    span {
+      width: 3rem;
+      height: 0.4rem;
+      background-color: $primary-300;
+
+      &:nth-child(2n) {
+        width: 2rem;
+      }
+    }
+  }
+
+  &__navigation {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    .menu {
+      @include breakpoint(tablet) {
+        display: none;
+      }
+    }
+  }
 }

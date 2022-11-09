@@ -1,5 +1,4 @@
 .modal {
-
   &__wrapper {
   }
 
@@ -54,6 +53,47 @@
 
     &:hover {
       border-color: $primary-300;
+    }
+  }
+}
+
+.modal--full-screen {
+  .container {
+    position: relative;
+  }
+
+  .modal__close {
+    top: 0;
+    right: var(--content-padding);
+    z-index: 2;
+
+    svg {
+      width: 2.8rem;
+      height: 2.8rem;
+
+      fill: $primary-300;
+    }
+
+    &:hover {
+      svg {
+        fill: $primary-900;
+      }
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .modal__window {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+
+    @include breakpoint(tablet) {
+      padding-top: 4rem;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }

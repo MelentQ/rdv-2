@@ -200,7 +200,7 @@
       }
     },
     "faq": {
-      "mods": "section--narrow-image",
+      "mods": "section--narrow-image section--hide-image-on-mobile",
       "bemClass": "",
       "title": "Часто задаваемые\nвопросы",
       "image": {
@@ -313,6 +313,50 @@
     {
       "title": "Подробные инструкции в нашей Академии RDV Маркет",
       "image": "img/content/links/2.png"
+    }
+  ],
+  "comparison": [
+    {
+      "title": "До автоматизации",
+      "items": [
+        {
+          "image": "img/content/comparison/1.png",
+          "text": "<p><b>100</b> заказов</p>"
+        },
+        {
+          "image": "img/content/comparison/2.png",
+          "text": "<p>1 сотрудник на <b>1 маркетплейс</b></p>"
+        },
+        {
+          "image": "img/content/comparison/3.png",
+          "text": "<p><b>10%</b> отмен</p>"
+        },
+        {
+          "image": "img/content/comparison/4.png",
+          "text": "<p><b>Блокировки</b> ЛК на маркетплейсе</p>"
+        }
+      ]
+    },
+    {
+      "title": "После автоматизации",
+      "items": [
+        {
+          "image": "img/content/comparison/5.png",
+          "text": "<p><b>> 500</b> заказов в день</p>"
+        },
+        {
+          "image": "img/content/comparison/6.png",
+          "text": "<p>1 сотрудник на все <b>маркетплейсы</b></p>"
+        },
+        {
+          "image": "img/content/comparison/7.png",
+          "text": "<p><b>1,5%</b> отмен</p>"
+        },
+        {
+          "image": "img/content/comparison/8.png",
+          "text": "<p><b>Нет блокировок</b></p>"
+        }
+      ]
     }
   ]
 }

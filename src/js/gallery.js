@@ -4,8 +4,6 @@ import window from "inputmask/lib/global/window";
 export default function gallery() {
   const containers = document.querySelectorAll('.js-gallery');
   containers.forEach(container => {
-    console.log(container.classList.contains('js-disable-if-admin'));
-    console.log(window.rdv.isAdmin)
     if (!(container.classList.contains('js-disable-if-admin') && window.rdv.isAdmin)) {
       if ([...container.querySelectorAll('.swiper-slide')].length > 1) {
         if (container.classList.contains('js-gallery-only-desktop')) {

@@ -12,8 +12,11 @@
 
     @include breakpoint(tablet) {
       padding: 0 2.5rem;
-      align-items: flex-start;
       gap: 1rem;
+    }
+
+    @include breakpoint(mobile) {
+      align-items: flex-start;
     }
   }
 
@@ -25,9 +28,12 @@
     object-fit: contain;
 
     @include breakpoint(tablet) {
-      margin-top: 2.5rem;
       height: 7.6rem;
       max-width: 10.1rem;
+    }
+
+    @include breakpoint(mobile) {
+      margin-top: 2rem;
     }
   }
 
