@@ -23,3 +23,27 @@
     padding-top: 5rem;
   }
 }
+
+.count-control__input {
+   width: 130px;
+   height: 30px;
+   padding-left: 30px;
+   padding-right: 30px;
+
+ }
+
+.count-control__btn {
+  width: 30px;
+}
+
+.count-control__btn::before,
+.count-control__btn::after {
+   width: 16px;
+   height: 2px;
+
+   border-radius: 30px;
+ }
+
+.count-control--small {
+   max-width: 13rem;
+ }
