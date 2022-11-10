@@ -29,11 +29,26 @@
 */
 
 /*!
+ * Vue.js v2.7.14
+ * (c) 2014-2022 Evan You
+ * Released under the MIT License.
+ */
+
+/*!
  * dist/inputmask
  * https://github.com/RobinHerbots/Inputmask
  * Copyright (c) 2010 - 2021 Robin Herbots
  * Licensed under the MIT license
  * Version: 5.0.7
+ */
+
+/*!
+ * jQuery Validation Plugin v1.19.5
+ *
+ * https://jqueryvalidation.org/
+ *
+ * Copyright (c) 2022 Jörn Zaefferer
+ * Released under the MIT license
  */
 
 /*!
@@ -44,6 +59,13 @@
 * Marc-Andre Lafortune - <petroselinum@marc-andre.ca>
 * MIT Licensed
 */
+
+/**
+ * Sticky Sidebar v2 JavaScript Plugin.
+ * @version 1.0.1
+ * @author Øystein Blixhavn <oystein@blixhavn.no>
+ * @license The MIT License (MIT)
+ */
 
 /**
  * Sticky.js

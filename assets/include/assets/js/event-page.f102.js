@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{182:function(e,t){const n=document.querySelectorAll(".s-list iframe"),i=e=>{const t=document.querySelector(".s-list__text"),n=9*t.getBoundingClientRect().width/16;e.height=n,t.height=n};n.length&&n.forEach(e=>{i(e),window.addEventListener("resize",()=>i(e))})}}]);
