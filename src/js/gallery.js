@@ -36,7 +36,7 @@ export default function gallery() {
       speed: 500,
       slidesPerView: 1,
       spaceBetween: 0,
-      autoHeight: true,
+      autoHeight: false,
       modules: [Navigation, Pagination, EffectFade],
       navigation: {
         nextEl: container.querySelector('.next'),

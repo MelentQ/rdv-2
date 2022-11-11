@@ -2,6 +2,8 @@
   counter-reset: ordered-list;
 
   &__slide {
+    align-self: center;
+
     &.hidden {
       display: none;
     }

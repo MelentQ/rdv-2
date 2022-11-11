@@ -1,4 +1,5 @@
-const path = require('path')
+const path = require('path');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   entry: {
@@ -16,6 +17,10 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
       }
     ]
   },
@@ -26,5 +31,15 @@ module.exports = {
   mode: 'development',
   externals: {
     jquery: 'jQuery'
-  }
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.common.js',
+      "%src%": path.resolve(__dirname, "src"),
+    },
+  },
+
+  plugins: [
+    new VueLoaderPlugin()
+  ]
 }

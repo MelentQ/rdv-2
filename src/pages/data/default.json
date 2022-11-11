@@ -207,6 +207,15 @@
         "left": true,
         "url": "img/content/illustrations/5.png"
       }
+    },
+    "remarks": {
+      "mods": "section--grey section--narrow-image",
+      "bemClass": "",
+      "title": "Вы можете интегрировать вашу 1С с маркетплейсами",
+      "image": {
+        "left": true,
+        "url": "img/content/illustrations/2.png"
+      }
     }
   },
   "simpleNumberedList": [

@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export default class Accordions {
-    constructor(props) {
+    constructor(props, container) {
         const defaultConfig = {
             selectors: {
                 container: null,
@@ -16,7 +16,7 @@ export default class Accordions {
 
         this.config = Object.assign(defaultConfig, props);
 
-        this.config.selectors.container ? (this.container = document.querySelector(this.config.selectors.container)) : (this.container = document);
+        this.config.selectors.container ? (this.container = this.config.selectors.container) : (this.container = document);
 
         this.setEventListeners();
     }

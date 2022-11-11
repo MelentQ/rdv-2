@@ -3,7 +3,14 @@
   background-color: $primary-900;
   color: $grayscale-100;
 
+  @include breakpoint(laptop) {
+    padding-top: 8rem;
+  }
+
+
   &__inner {
+    position: relative;
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
@@ -122,5 +129,11 @@
       background-color: $grayscale-300;
       border-radius: 1.2rem;
     }
+  }
+
+  .breadcrumbs {
+    position: absolute;
+    top: -5rem;
+    left: 0;
   }
 }

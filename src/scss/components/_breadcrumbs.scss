@@ -4,6 +4,22 @@
   flex-wrap: wrap;
   gap: 1.4rem;
 
+  li {
+    &:last-of-type {
+      .breadcrumbs__link {
+        pointer-events: none;
+        &:link,
+        &:visited {
+          color: $primary-300;
+        }
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+
   &__link {
     position: relative;
 
@@ -14,18 +30,6 @@
     &:link,
     &:visited {
       color: #85B0C2;
-    }
-
-    &:last-of-type {
-      pointer-events: none;
-      &:link,
-      &:visited {
-        color: white;
-      }
-
-      &::after {
-        content: none;
-      }
     }
 
     &::after {
