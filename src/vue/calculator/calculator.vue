@@ -197,7 +197,7 @@ import StickySidebar from 'sticky-sidebar-v2';
 import CountControl from '../count-control/count-control.vue';
 import ModalInfo from '../modal-info/modal-info.vue';
 import { lockScroll, unlockScroll } from '../../js/libs/scroll-lock';
-import '../../js/libs/hystmodal.min.js';
+import HystModal from "../../js/libs/hystmodal.min";
 
 export default {
     components: {
@@ -505,7 +505,7 @@ export default {
     },
     mounted() {
         const that = this;
-        const modal = new window.HystModal({
+        const modal = new HystModal({
           linkAttributeName: "data-form",
           beforeOpen: (modal) => {
             const resultInput = modal.openedWindow.querySelector('.js-result-input');
@@ -520,6 +520,7 @@ export default {
             }
           }
         });
+        window.rdv.calcModals = modal;
         const buttons = document.querySelectorAll('.js-open-modal');
         buttons.forEach(button => {
           button.addEventListener('click', () => {

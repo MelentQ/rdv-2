@@ -1,5 +1,61 @@
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: auto;
+
   background: #ecf4f9;
+
+
+  &.fixed {
+    position: fixed;
+
+    box-shadow: 0 3px 12px 0 rgb(0 0 0 / 18%);
+    background: white;
+
+    @include breakpoint(tablet) {
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+    }
+
+    .header__top {
+      display: contents;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      @include breakpoint(tablet) {
+        justify-content: space-between;
+      }
+    }
+
+    .header__logo {
+      flex-shrink: 0;
+      order: 1;
+
+      img {
+        width: 9.2rem;
+      }
+    }
+
+    .header__navigation {
+      order: 2;
+
+      padding-top: 0rem;
+      padding-bottom: 0rem;
+
+      justify-content: flex-end;
+    }
+
+    .header__logo ~ button {
+      order: 3;
+    }
+  }
 
   &__top {
     display: flex;

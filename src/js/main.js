@@ -41,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
   initFaqAccordions();
 
   initCalculator();
+
+  setHeaderHeight();
+  fixedHeader();
 });
 
 function initCalculator(){
@@ -67,4 +70,33 @@ function initFaqAccordions() {
       }
     })
   })
+}
+
+function setHeaderHeight() {
+  const header = document.querySelector('.header');
+  if (header) {
+    document.documentElement.style.setProperty('--js-header-height', header.clientHeight + 'px');
+  }
+}
+
+function fixedHeader() {
+  const header = document.querySelector('.header');
+  if (header) {
+    const toggleY = header.dataset.toggle || 300;
+    let fixed = false;
+
+    window.addEventListener('scroll', check, {passive: true})
+
+    function check() {
+      if(!fixed && window.scrollY >= toggleY) {
+        fixed = true;
+        header.classList.add('fixed');
+      } else if(window.scrollY < toggleY) {
+        fixed = false;
+        header.classList.remove('fixed');
+      }
+    }
+
+    check();
+  }
 }

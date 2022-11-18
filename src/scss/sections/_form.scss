@@ -27,6 +27,10 @@
       width: 100%;
       transition: width 4s linear;
     }
+
+    &.loading .form__submit-button {
+      pointer-events: none;
+    }
   }
 
   &__grid-inputs {

@@ -16,6 +16,7 @@
   }
 
   &__item {
+    flex-shrink: 0;
     &--has-submenu {
       &:hover {
         .menu__submenu {
@@ -43,7 +44,7 @@
   &__head {
     position: relative;
 
-    font-size: 13.5px;
+    font-size: 1.35rem;
     line-height: 1.4;
     text-transform: uppercase;
     font-weight: 700;
@@ -87,7 +88,7 @@
 
     transition: visibility 0.3s ease, opacity 0.3s ease;
 
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 
     @include breakpoint(tablet) {
       grid-template-columns: repeat(2, 1fr);
@@ -110,7 +111,7 @@
     }
 
     .accent {
-      font-size: 1.2rem;
+      font-size: 1.35rem;
       text-transform: uppercase;
       font-weight: 700;
       color: $primary-900;

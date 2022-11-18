@@ -23,6 +23,8 @@
 
 .page-main {
     flex-grow: 1;
+
+    padding-top: var(--js-header-height);
 }
 
 .default-margins {

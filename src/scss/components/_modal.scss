@@ -57,6 +57,30 @@
   }
 }
 
+.modal#success,
+.modal#error {
+  .modal__title {
+    @extend %fs-h3;
+
+    & ~ p {
+      font-size: 1.8rem;
+      line-height: 1.4;
+
+      @media screen and (max-width: 1099px) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .modal__window {
+    width: 68rem;
+
+    @media screen and (max-width: 720px) {
+      width: calc(100% - 4rem);
+    }
+  }
+}
+
 .modal--full-screen {
   .container {
     position: relative;
