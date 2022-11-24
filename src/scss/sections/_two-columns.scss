@@ -1,6 +1,10 @@
 .two-columns {
   margin: var(--s-0) 0;
 
+  @include breakpoint(mobile) {
+    margin: 2.5rem 0;
+  }
+
   &--grey {
     margin: 0;
     padding: var(--s-0) 0;

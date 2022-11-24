@@ -5,8 +5,8 @@
     margin: 3.6rem 0 6rem;
   }
 
-  @include breakpoint(tablet) {
-    margin: 5rem 0;
+  @include breakpoint(mobile) {
+    margin: 2.5rem 0;
   }
 
   &__inner {
@@ -53,8 +53,17 @@
     position: relative;
     width: 100%;
 
+    @include breakpoint(laptop) {
+      height: 30rem;
+    }
+
     @include breakpoint(mobile) {
-      height: 15.6rem;
+      height: 25.6rem;
+      display: flex;
+    }
+
+    @media only screen and (max-width: (380px)) {
+      height: 16rem;
     }
   }
 
@@ -81,7 +90,6 @@
     gap: 2rem;
 
     counter-reset: ordered-list;
-    margin-left: -2.2rem;
 
     @include breakpoint(tablet) {
       gap: 1.8rem;

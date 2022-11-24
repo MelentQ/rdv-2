@@ -6,8 +6,9 @@ export default function videoSlider() {
   containers.forEach(container => {
     new Swiper(container, {
       speed: 400,
-      slidesPerView: 1,
+      slidesPerView: 1.5,
       spaceBetween: 16,
+      cssMode: true,
       on: {
         init: function (swiper) {
           swiper.el.classList.remove("loading")

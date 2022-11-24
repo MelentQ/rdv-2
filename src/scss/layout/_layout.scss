@@ -23,12 +23,23 @@
 
 .page-main {
     flex-grow: 1;
+    padding-top: 15.5rem;
 
-    padding-top: var(--js-header-height);
+    @include breakpoint(laptop) {
+        padding-top: 14.4rem;
+    }
+
+    @include breakpoint(small-mobile) {
+        padding-top: 13.6rem;
+    }
 }
 
 .default-margins {
     margin: var(--s-0) 0;
+
+    @include breakpoint(mobile) {
+        padding: 2.5rem 0;
+    }
 }
 
 .text-content-wrapper {
