@@ -34,7 +34,7 @@
   &__description {
     margin-top: 1.5rem;
     color: $grayscale-700;
-    @extend %fs-t2;
+    @extend %fs-t1;
 
     @include breakpoint(tablet) {
       max-width: 56rem;
