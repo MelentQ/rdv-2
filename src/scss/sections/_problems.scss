@@ -57,13 +57,8 @@
       height: 30rem;
     }
 
-    @include breakpoint(mobile) {
-      height: 25.6rem;
-      display: flex;
-    }
-
-    @media only screen and (max-width: (380px)) {
-      height: 16rem;
+    @include breakpoint(tablet) {
+      height: auto;
     }
   }
 
@@ -78,6 +73,9 @@
     object-position: center center;
 
     @include breakpoint(tablet) {
+      position: static;
+      height: auto;
+      width: 100%;
       padding-left: 0;
     }
   }

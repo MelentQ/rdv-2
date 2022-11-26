@@ -17,6 +17,7 @@
 
     @include breakpoint(mobile) {
       align-items: flex-start;
+      flex-direction: column;
     }
   }
 
@@ -49,6 +50,10 @@
 
     @include breakpoint(tablet) {
       padding: 2.5rem 0;
+    }
+
+    @include breakpoint(mobile) {
+      padding-top: 0;
     }
   }
 }
