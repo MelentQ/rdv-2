@@ -2,6 +2,9 @@ import Fancybox from "@fancyapps/ui";
 import Vue from 'vue';
 import calculator from "../vue/calculator/calculator.vue";
 
+import './old/cookie1.js';
+import './old/cookie2.js';
+
 import forms from "./forms";
 import lockForm from "./lockForm";
 import masks from "./masks";
@@ -16,6 +19,11 @@ import sticky from "./sticky";
 import numberedListLine from "./numberedListLine";
 import Accordions from "./Accordions";
 import legacy from "./old/legacy";
+import window from "inputmask/lib/global/window";
+
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+gsap.registerPlugin(ScrollToPlugin);
 
 document.addEventListener('DOMContentLoaded', function () {
   window.rdv = {
@@ -44,6 +52,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
   setHeaderHeight();
   fixedHeader();
+
+  const btnTop = document.querySelector(".top_button");
+
+  if (btnTop) {
+    btnTop.addEventListener("click", () => {
+      btnTop.style.display = "none";
+      gsap.to(window, {
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTo: {
+          y: document.body,
+          autoKill: false,
+          offsetY: 0
+        }
+      });
+    });
+  }
+
+  window.addEventListener('scroll', check, {passive: true})
+
+  function check() {
+    if (window.scrollY > 500) {
+      btnTop.style.display = "block";
+    } else {
+      btnTop.style.display = "none";
+    }
+  }
+
+  check();
 });
 
 function initCalculator(){

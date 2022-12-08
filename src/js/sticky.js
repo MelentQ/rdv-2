@@ -6,6 +6,11 @@ export default function sticky() {
   containers.forEach(container => {
     const wrapper = container.parentNode;
     wrapper.style.minHeight = `${container.offsetHeight}px`;
+
+    const elements = container.querySelectorAll('.js-tab');
+    elements.forEach(element => {
+      element.style.width = `${element.offsetWidth}px`;
+    })
   })
 
   new Sticky('.js-sticky', {
