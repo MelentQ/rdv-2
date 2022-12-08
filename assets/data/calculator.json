@@ -1,0 +1,24 @@
+{
+  "days": [
+    {
+      "count": 30,
+      "text": "30 дней",
+      "discount": 0
+    },
+    {
+      "count": 90,
+      "text": "90 дней",
+      "discount": 0.05
+    },
+    {
+      "count": 180,
+      "text": "180 дней",
+      "discount": 0.15
+    },
+    {
+      "count": 360,
+      "text": "360 дней",
+      "discount": 0.25
+    }
+  ]
+}
