@@ -398,7 +398,7 @@
                                         <script type="text/x-tmpl" id="calculator-modules">{% for (let i=0; i<o.modules.length; i++) { %}
                     <li class="calculator__module{% if(o.modules[i].active) { %} active{% } %}">
                       <div class="calculator__module-top">
-                        <h4 class="calculator__module-title">{%=o.modules[i].name%}</h4>
+                        <h4 class="calculator__module-title">{%#o.modules[i].name%}</h4>
                         <span class="calculator__module-label">{%=o.modules[i].cost%} {%=o.currency%}/день</span>
                       </div>
                       <div class="calculator__module-bottom">
@@ -414,7 +414,7 @@
                               </svg>
                             </button>
                             <div class="calculator__module-tooltip-content">
-                              {%=o.modules[i].tooltip%}
+                              {%#o.modules[i].tooltip%}
                             </div>
                           </div>
                         {% } %}
@@ -454,7 +454,7 @@
     
                         {% for (let i=0; i<o.list.length; i++) { %}
                           <li class="calculator__result-list-item">
-                            <span class="calculator__result-list-item-title">{%=o.list[i].name%}</span>
+                            <span class="calculator__result-list-item-title">{%#o.list[i].name%}</span>
                             <div class="calculator__result-list-item-price-block">
                               {% if(o.list[i].old) { %}
                                 <span class="calculator__result-list-item-old-price">{%=o.list[i].old.toLocaleString('ru-RU')%} {%=o.currency%}</span>
@@ -467,7 +467,9 @@
                     </div>
                   {% } %}</script>
                                     </div>
-                                    <button class="button button--secondary" type="button">отправить заявку</button>
+                                    <div class="js-calculator-button">
+                                        <script type="text/x-tmpl" id="calculator-button"><button class="button button--secondary js-calculator-data" data-modal="#form1" data-calculator-data="{%=o%}" type="button">отправить заявку</button></script>
+                                    </div>
                                     <span class="calculator__result-label">Тестовый период 14 дней и подключение 1 кабинета бесплатно!</span>
                                 </div>
                             </div>
