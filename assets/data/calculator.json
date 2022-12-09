@@ -1,24 +1,102 @@
 {
+  "currency": "₽",
+  "marketplaces": [
+    {
+      "logo": "img/content/calculator/ozon.svg",
+      "name": "Ozon",
+      "options": [
+        {
+          "key": 1,
+          "name": "FBSS",
+          "cost": 150,
+          "active": true
+        },
+        {
+          "key": 2,
+          "name": "FBOO",
+          "cost": 100,
+          "active": false
+        }
+      ]
+    },
+    {
+      "logo": "img/content/calculator/wb.svg",
+      "name": "Wildberries",
+      "options": [
+        {
+          "key": 3,
+          "name": "FBS",
+          "cost": 150,
+          "active": false
+        },
+        {
+          "key": 4,
+          "name": "FBO",
+          "cost": 25,
+          "active": false
+        }
+      ]
+    }
+  ],
+  "license": {
+    "name": "Пользовательские лицензии",
+    "cost": 70,
+    "count": 1,
+    "discounts": [
+      {
+        "count": 1,
+        "discount": 0
+      },
+      {
+        "count": 5,
+        "discount": 0.1
+      },
+      {
+        "count": 10,
+        "discount": 0.2
+      }
+    ]
+  },
+  "modules": [
+    {
+      "key": 1,
+      "name": "Создание карточек товаров на Wildberries",
+      "cost": 100,
+      "active": false,
+      "tooltip": "Текст для тултипа"
+    },
+    {
+      "key": 2,
+      "name": "Внешний мониторинг цен",
+      "cost": 150,
+      "active": false,
+      "tooltip": "Текст для тултипа"
+    }
+  ],
   "days": [
     {
+      "key": 1,
       "count": 30,
-      "text": "30 дней",
-      "discount": 0
+      "discount": 0,
+      "active": true
     },
     {
+      "key": 2,
       "count": 90,
-      "text": "90 дней",
-      "discount": 0.05
+      "discount": 0.05,
+      "active": false
     },
     {
+      "key": 3,
       "count": 180,
-      "text": "180 дней",
-      "discount": 0.15
+      "discount": 0.15,
+      "active": false
     },
     {
+      "key": 4,
       "count": 360,
-      "text": "360 дней",
-      "discount": 0.25
+      "discount": 0.25,
+      "active": false
     }
   ]
 }

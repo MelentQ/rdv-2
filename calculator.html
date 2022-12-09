@@ -337,30 +337,30 @@
             </header>
 
             <main class="page-main">
-                <section class="calculator js-calculator" data-url="assets/data/calculator.json">
+                <section class="calculator loading js-calculator" data-url="assets/data/calculator.json">
                     <div class="container">
                         <h2 class="calculator__title">Тарифы</h2>
                         <div class="calculator__inner">
                             <div class="calculator__left">
                                 <div class="calculator__block">
                                     <h3 class="calculator__block-title">Рассчитайте стоимость интеграции 1С с маркетплейсами Выберите одну или несколько схем работы</h3>
-                                    <ul class="calculator__marketplaces">
-                                        <li class="calculator__marketplace">
-                                            <div class="calculator__marketplace-logo-wrapper">
-                                                <img src="img/content/calculator/ozon.svg" alt="Ozon">
-                                            </div>
-                                            <span class="calculator__marketplace-label">выберите схему</span>
-                                            <ul class="calculator__marketplace-options">
-                                                <li class="calculator__marketplace-option active" tabindex="0">
-                                                    <span class="calculator__marketplace-option-name">FBS</span>
-                                                    <span class="calculator__marketplace-option-cost">150 ₽/день</span>
-                                                </li>
-                                                <li class="calculator__marketplace-option" tabindex="0">
-                                                    <span class="calculator__marketplace-option-name">FBO</span>
-                                                    <span class="calculator__marketplace-option-cost">25 ₽/день</span>
-                                                </li>
-                                            </ul>
-                                        </li>
+                                    <ul class="calculator__marketplaces js-calculator-marketplaces">
+                                        <script type="text/x-tmpl" id="calculator-marketplaces">{% for (let i=0; i<o.marketplaces.length; i++) { %}
+                    <li class="calculator__marketplace">
+                      <div class="calculator__marketplace-logo-wrapper">
+                        <img src="{%=o.marketplaces[i].logo%}" alt="{%=o.marketplaces[i].name%}">
+                      </div>
+                      <span class="calculator__marketplace-label">выберите схему</span>
+                      <ul class="calculator__marketplace-options">
+                        {% for (let j=0; j<o.marketplaces[i].options.length; j++) { %}
+                          <li class="calculator__marketplace-option{% if(o.marketplaces[i].options[j].active) { %} active{% } %}" tabindex="0" data-key="{%=o.marketplaces[i].options[j].key%}">
+                            <span class="calculator__marketplace-option-name">{%=o.marketplaces[i].options[j].name%}</span>
+                            <span class="calculator__marketplace-option-cost">{%=o.marketplaces[i].options[j].cost%} {%=o.currency%}/день</span>
+                          </li>
+                        {% } %}
+                      </ul>
+                    </li>
+                  {% } %}</script>
                                     </ul>
                                 </div>
                                 <div class="calculator__block">
@@ -368,19 +368,23 @@
                                     <div class="calculator__license">
                                         <div class="calculator__license-top">
                                             <h4 class="calculator__license-title">Пользовательские лицензии 1С</h4>
-                                            <span class="calculator__license-label">70 ₽/день за одну лицензию</span>
+                                            <div class="calculator__license-label js-calculator-license-price">
+                                                <script type="text/x-tmpl" id="calculator-license-price">{%=o.license.cost%} {%=o.currency%}/день за одну лицензию</script>
+                                            </div>
                                         </div>
                                         <div class="calculator__license-description">
                                             <p>Количество лицензий соответствует количеству сотрудников, которые будут работать в системе</p>
                                         </div>
                                         <div class="calculator__license-count">
-                                            <button class="calculator__license-count-button" type="button">
+                                            <button class="calculator__license-count-button decrease" type="button">
                                                 <svg width="48" height="48">
                                                     <use xlink:href="#minus" />
                                                 </svg>
                                             </button>
-                                            <span class="calculator__license-count-value">1000</span>
-                                            <button class="calculator__license-count-button" type="button">
+                                            <div class="calculator__license-count-value js-calculator-license-count">
+                                                <script type="text/x-tmpl" id="calculator-license-count">{%=o.license.count%}</script>
+                                            </div>
+                                            <button class="calculator__license-count-button increase" type="button">
                                                 <svg width="48" height="48">
                                                     <use xlink:href="#plus" />
                                                 </svg>
@@ -390,62 +394,84 @@
                                 </div>
                                 <div class="calculator__block">
                                     <h3 class="calculator__block-title">Рассчитайте стоимость интеграции 1С с маркетплейсами Выберите одну или несколько схем работы</h3>
-                                    <ul class="calculator__modules">
-                                        <li class="calculator__module active">
-                                            <div class="calculator__module-top">
-                                                <h4 class="calculator__module-title">Создание карточек товаров на Wildberries</h4>
-                                                <span class="calculator__module-label">100 ₽/день</span>
-                                            </div>
-                                            <div class="calculator__module-bottom">
-                                                <button class="button button--stroke" type="button">
-                                                    <span>Добавить</span>
-                                                    <span>Убрать</span>
-                                                </button>
-                                                <div class="calculator__module-tooltip">
-                                                    <button class="calculator__module-tooltip-button" type="button">
-                                                        <svg width="24" height="24">
-                                                            <use xlink:href="#info" />
-                                                        </svg>
-                                                    </button>
-                                                    <div class="calculator__module-tooltip-content">Можно массово создавать и актуализировать карточки товаров в онлайн-режиме единого окна вашей системы 1С для быстрой трансляции новых карточек на Wildberries.</div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                    <ul class="calculator__modules js-calculator-modules">
+                                        <script type="text/x-tmpl" id="calculator-modules">{% for (let i=0; i<o.modules.length; i++) { %}
+                    <li class="calculator__module{% if(o.modules[i].active) { %} active{% } %}">
+                      <div class="calculator__module-top">
+                        <h4 class="calculator__module-title">{%=o.modules[i].name%}</h4>
+                        <span class="calculator__module-label">{%=o.modules[i].cost%} {%=o.currency%}/день</span>
+                      </div>
+                      <div class="calculator__module-bottom">
+                        <button class="button button--stroke" type="button" data-key="{%=o.modules[i].key%}">
+                          <span>Добавить</span>
+                          <span>Убрать</span>
+                        </button>
+                        {% if(o.modules[i].tooltip) { %}
+                          <div class="calculator__module-tooltip">
+                            <button class="calculator__module-tooltip-button" type="button">
+                              <svg width="24" height="24">
+                                <use xlink:href="#info"/>
+                              </svg>
+                            </button>
+                            <div class="calculator__module-tooltip-content">
+                              {%=o.modules[i].tooltip%}
+                            </div>
+                          </div>
+                        {% } %}
+                      </div>
+                    </li>
+                  {% } %}</script>
                                     </ul>
                                 </div>
                             </div>
                             <div></div>
                             <div class="calculator__right" data-sticky-container>
-                                <div class="calculator__result js-sticky" data-margin-top="120">
+                                <div class="calculator__result js-calculator-sticky" data-margin-top="120">
                                     <h3 class="calculator__result-title">Стоимость тарифа</h3>
                                     <ul class="calculator__result-options js-calculator-days">
-                                        <script type="text/x-tmpl" id="calculator-days">{% for (let i=0; i<o.length; i++) { %}
+                                        <script type="text/x-tmpl" id="calculator-days">{% for (let i=0; i<o.days.length; i++) { %}
                     <li>
-                      <button class="calculator__result-option active" type="button">{%=o[i].text%}</button>
+                      <button class="calculator__result-option{% if(o.days[i].active) { %} active{% } %}" type="button" data-key="{%=o.days[i].key%}">{%=o.days[i].count%} дней</button>
                     </li>
                   {% } %}</script>
                                     </ul>
-                                    <div class="calculator__result-cost-block">
-                                        <span class="calculator__result-cost">6 000 ₽</span>
-                                        <span class="calculator__result-cost-per-day">200 ₽/день</span>
-                                    </div>
-                                    <div class="calculator__result-list-block">
-                                        <span class="calculator__result-list-title">В тариф включено:</span>
-                                        <ul class="calculator__result-list">
-                                            <li class="calculator__result-list-item">
-                                                <span class="calculator__result-list-item-title">Wildberries (FBS)</span>
-                                                <span class="calculator__result-list-item-cost">4 500 ₽</span>
-                                            </li>
-                                            <li class="calculator__result-list-item">
-                                                <span class="calculator__result-list-item-title">Пользовательские лицензии 70 ₽ × 1 шт</span>
-                                                <span class="calculator__result-list-item-cost">1 500 ₽</span>
-                                            </li>
-                                        </ul>
+                                    <div class="js-calculator-result">
+                                        <script type="text/x-tmpl" id="calculator-result"><div class="calculator__result-price-block">
+                    {% if(o.discount) { %}
+                      <div class="calculator__discount">
+                        <span class="calculator__old-price">{%=o.old.toLocaleString('ru-RU')%} {%=o.currency%}</span>
+                        <span class="calculator__discount-percent">-{%=o.discount * 100%}%</span>
+                      </div>
+                    {% } %}
+                    <span class="calculator__result-price">{%=o.total.toLocaleString('ru-RU')%} {%=o.currency%}</span>
+                    <span class="calculator__result-cost-per-day">{%=o.cost.toLocaleString('ru-RU')%} {%=o.currency%}/день</span>
+                  </div>
+    
+                  {% if(o.list.length) { %}
+                    <div class="calculator__result-list-block">
+                      <span class="calculator__result-list-title">В тариф включено:</span>
+                      <ul class="calculator__result-list">
+    
+                        {% for (let i=0; i<o.list.length; i++) { %}
+                          <li class="calculator__result-list-item">
+                            <span class="calculator__result-list-item-title">{%=o.list[i].name%}</span>
+                            <div class="calculator__result-list-item-price-block">
+                              {% if(o.list[i].old) { %}
+                                <span class="calculator__result-list-item-old-price">{%=o.list[i].old.toLocaleString('ru-RU')%} {%=o.currency%}</span>
+                              {% } %}
+                              <span class="calculator__result-list-item-price">{%=o.list[i].price.toLocaleString('ru-RU')%} {%=o.currency%}</span>
+                            </div>
+                          </li>
+                        {% } %}
+                      </ul>
+                    </div>
+                  {% } %}</script>
                                     </div>
                                     <button class="button button--secondary" type="button">отправить заявку</button>
                                     <span class="calculator__result-label">Тестовый период 14 дней и подключение 1 кабинета бесплатно!</span>
                                 </div>
                             </div>
+                            <div class="calculator__loader"></div>
                         </div>
                     </div>
                 </section>
