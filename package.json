@@ -19,7 +19,9 @@
   ],
   "dependencies": {
     "@fancyapps/ui": "^4.0.31",
+    "autosize": "^5.0.0",
     "axios": "^1.1.3",
+    "blueimp-tmpl": "^3.20.0",
     "body-scroll-lock": "^3.1.5",
     "bootstrap-datepicker": "^1.9.0",
     "choices.js": "^10.1.0",
@@ -33,6 +35,7 @@
     "imask": "^6.4.2",
     "inputmask": "^5.0.6",
     "intl-tel-input": "^17.0.18",
+    "jquery-validation": "^1.19.3",
     "lazysizes": "^5.3.2",
     "lodash": "^4.17.21",
     "parsleyjs": "^2.9.2",
@@ -43,9 +46,7 @@
     "tingle.js": "^0.15.3",
     "vue": "^2.6.14",
     "vue-loader": "^15.9.6",
-    "vue-style-loader": "^4.1.2",
-    "jquery-validation": "^1.19.3",
-    "autosize": "^5.0.0"
+    "vue-style-loader": "^4.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -76,6 +77,7 @@
     "gulp-uglify-es": "^1.0.4",
     "gulp-webp": "^3.0.0",
     "handlebars-layouts": "^3.1.4",
+    "prettier": "^2.8.1",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.37.5",
     "webpack": "^5.72.0",

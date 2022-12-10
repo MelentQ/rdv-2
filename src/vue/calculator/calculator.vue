@@ -256,7 +256,7 @@ export default {
                             code: "FBO",
                             price: 25,
                             isActive: false,
-							isOzonFBO: true,
+							              isOzonFBO: true,
                         },
                     ],
                 },

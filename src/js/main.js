@@ -2,6 +2,8 @@ import Fancybox from "@fancyapps/ui";
 import Vue from 'vue';
 import calculator from "../vue/calculator/calculator.vue";
 
+import newCalculator from './calculator';
+
 import './old/cookie1.js';
 import './old/cookie2.js';
 
@@ -49,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initFaqAccordions();
 
   initCalculator();
+  newCalculator();
 
   setHeaderHeight();
   fixedHeader();
