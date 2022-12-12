@@ -1,5 +1,6 @@
 import Sticky from 'sticky-js'
 import tmpl from 'blueimp-tmpl'
+import getCoords from '%src%/js/getCoords'
 
 export default function calculator() {
   const container = document.querySelector('.js-calculator')
@@ -22,9 +23,11 @@ export default function calculator() {
       render('.js-calculator-modules', 'calculator-modules', data)
       render('.js-calculator-days', 'calculator-days', data)
 
-      sticky = new Sticky('.js-calculator-sticky', {
-        stickyClass: 'active',
-      })
+      if (window.matchMedia('(min-width: 1099px)').matches) {
+        sticky = new Sticky('.js-calculator-sticky', {
+          stickyClass: 'active',
+        })
+      }
 
       // инициализируем логику калькулятора
       init(data)
@@ -61,7 +64,7 @@ export default function calculator() {
         old: state.days.discount ? item.cost * state.days.count : 0,
       })),
       {
-        name: `${state.license.name} ${state.license.cost} ${state.currency}&nbsp;×&nbsp;${state.license.count}&nbsp;шт`,
+        name: `${state.license.name} ${state.license.cost}&nbsp;${state.currency}&nbsp;×&nbsp;${state.license.count}&nbsp;шт`,
         price: state.license.cost * state.license.count * (1 - state.days.discount) * state.days.count,
         old: state.days.discount ? state.license.cost * state.license.count * state.days.count : 0,
       },
@@ -94,21 +97,26 @@ export default function calculator() {
     render('.js-calculator-result', 'calculator-result', {
       currency: state.currency,
       discount: state.days.discount,
-      old: old,
+      old,
       list,
-      total: total,
+      total,
       cost: total / state.days.count,
     })
     render(
       '.js-calculator-button',
       'calculator-button',
-      JSON.stringify({
-        currency: state.currency,
-        list,
-        total: total,
-        cost: total / state.days.count,
+      {
+        json: JSON.stringify({
+          currency: state.currency,
+          list,
+          total: total,
+          cost: total / state.days.count,
+          days: state.days.count,
+        }),
+        total,
         days: state.days.count,
-      })
+        currency: state.currency
+      }
     )
 
     sticky && sticky.update()
@@ -153,11 +161,23 @@ export default function calculator() {
     const marketplacesOptions = container.querySelectorAll('.calculator__marketplace-option')
     marketplacesOptions.forEach((button) => {
       button.addEventListener('click', () => {
-        button.classList.toggle('active')
+        const optionsCount = data.marketplaces.reduce((acc, marketplace) => {
+          marketplace.options
+            .filter((option) => option.active)
+            .forEach((option) => {
+              acc++
+            })
+          return acc
+        }, 0)
+
+        if (optionsCount <= 1 && button.classList.contains('active')) {
+          return
+        }
 
         data.marketplaces.forEach((marketplace, i) => {
           marketplace.options.forEach((option, j) => {
             if (option.key == button.dataset.key) {
+              button.classList.toggle('active')
               data.marketplaces[i].options[j].active = !data.marketplaces[i].options[j].active
             }
           })
@@ -222,6 +242,30 @@ export default function calculator() {
         update(data)
       })
     })
+
+    // tooltip stop event propagation
+    const tooltips = document.querySelectorAll('.calculator__tooltip')
+    tooltips.forEach((tooltip) => {
+      tooltip.addEventListener('click', (e) => {
+        e.stopPropagation()
+      })
+    })
+
+    // mobile fixed result
+    if (window.matchMedia('(max-width: 1100px)').matches) {
+      const resultBlock = container.querySelector('.js-calculator-sticky')
+      const startY = getCoords(container).top
+      const endY = getCoords(resultBlock).top
+
+      window.addEventListener(
+        'scroll',
+        () => {
+          console.log(window.scrollY)
+          resultBlock.classList.toggle('fixed', window.scrollY > startY && window.scrollY + window.innerHeight < endY)
+        },
+        { passive: true }
+      )
+    }
   }
 
   function show() {

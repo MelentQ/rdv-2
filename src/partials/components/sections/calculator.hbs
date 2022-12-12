@@ -20,7 +20,21 @@
                   <ul class="calculator__marketplace-options">
                     {% for (let j=0; j<o.marketplaces[i].options.length; j++) { %}
                       <li class="calculator__marketplace-option{% if(o.marketplaces[i].options[j].active) { %} active{% } %}" tabindex="0" data-key="{%=o.marketplaces[i].options[j].key%}">
-                        <span class="calculator__marketplace-option-name">{%=o.marketplaces[i].options[j].name%}</span>
+                        <div class="calculator__marketplace-option-name-wrapper">
+                          <span class="calculator__marketplace-option-name">{%=o.marketplaces[i].options[j].name%}</span>
+                          {% if(o.marketplaces[i].options[j].tooltip) { %}
+                            <div class="calculator__tooltip">
+                              <button class="calculator__tooltip-button" type="button">
+                                <svg width="24" height="24">
+                                  <use xlink:href="#info-simple"/>
+                                </svg>
+                              </button>
+                              <div class="calculator__tooltip-content">
+                                {%#o.marketplaces[i].options[j].tooltip%}
+                              </div>
+                            </div>
+                          {% } %}
+                        </div>
                         <span class="calculator__marketplace-option-cost">{%=o.marketplaces[i].options[j].cost%} {%=o.currency%}/день</span>
                       </li>
                     {% } %}
@@ -87,13 +101,13 @@
                       <span>Убрать</span>
                     </button>
                     {% if(o.modules[i].tooltip) { %}
-                      <div class="calculator__module-tooltip">
-                        <button class="calculator__module-tooltip-button" type="button">
+                      <div class="calculator__tooltip">
+                        <button class="calculator__tooltip-button" type="button">
                           <svg width="24" height="24">
                             <use xlink:href="#info"/>
                           </svg>
                         </button>
-                        <div class="calculator__module-tooltip-content">
+                        <div class="calculator__tooltip-content">
                           {%#o.modules[i].tooltip%}
                         </div>
                       </div>
@@ -106,7 +120,7 @@
         </div>
 
       </div>
-      <div></div>
+      <div class="calculator__layout-ghost"></div>
       <div class="calculator__right" data-sticky-container>
         <div class="calculator__result js-calculator-sticky" data-margin-top="120">
           <h3 class="calculator__result-title">Стоимость тарифа</h3>
@@ -153,9 +167,13 @@
               {% } %}
             </script>
           </div>
-          <div class="js-calculator-button">
+          <div class="calculator__result-button js-calculator-button">
             <script type="text/x-tmpl" id="calculator-button">
-              <button class="button button--secondary js-calculator-data" data-modal="#form1" data-calculator-data="{%=o%}" type="button">отправить заявку</button>
+              <div class="calculator__result-button-info">
+                <span class="calculator__result-button-price">{%=o.total.toLocaleString('ru-RU')%} {%=o.currency%}</span>
+                <span class="calculator__result-button-days">за {%=o.days%} дней</span>
+              </div>
+              <button class="button button--secondary js-calculator-data" data-modal="#form1" data-calculator-data="{%=o.json%}" data-commentary="Заявка с калькулятора RDV Маркет." data-request-type="3dd16968-1c80-4f63-9c59-635da55bb2d6" type="button" >отправить заявку</button>
             </script>
           </div>
           <span class="calculator__result-label">Тестовый период 14 дней и подключение 1 кабинета бесплатно!</span>

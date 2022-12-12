@@ -76,21 +76,32 @@
     box-shadow: 0 0 0 0 rgb(25 185 222 / 10%);
     transition: all .3s cubic-bezier(0.29, 0.03, 0.96, 0.35);
     border-radius: 50%;
-    border: 1px solid white;
     background-color: transparent;
     outline: none;
     display: none;
     z-index: 50;
     position: fixed;
-    bottom: 50px;
-    left: 50px;
+    bottom: 5rem;
+    left: 5rem;
     background-image: url("../img/top_button.svg");
     background-repeat: no-repeat;
-    width: 70px;
-    height: 70px;
+    background-size: contain;
+    width: 7rem;
+    height: 7rem;
 
     &:hover {
-        box-shadow: 0 0 0 15px rgb(25 185 222 / 10%), inset 0 0 0 2px rgb(255 255 255 / 95%);
-        border: 1px solid white;
+        box-shadow: 0 0 0 1.5rem rgb(25 185 222 / 10%);
+
+        @include breakpoint(tablet) {
+            box-shadow: 0 0 0 1rem rgb(25 185 222 / 10%);
+        }
+    }
+
+    @include breakpoint(tablet) {
+        bottom: 8rem;
+        left: 2rem;
+
+        width: 5rem;
+        height: 5rem;
     }
 }
