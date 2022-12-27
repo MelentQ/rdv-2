@@ -44,6 +44,10 @@
     }
   }
 
+  &--min {
+    padding: 1.6rem 2.2rem;
+  }
+
   &--stroke {
     background-color: $grayscale-100;
     color: $primary-300;
@@ -51,6 +55,17 @@
     &:link,
     &:visited {
       color: $primary-300;
+    }
+  }
+
+  &--stroke-bold {
+    border-color: $primary-900;
+    background-color: rgba(0,0,0,0);
+    color: $primary-900;
+
+    &:link,
+    &:visited {
+      color: $primary-900;
     }
   }
 

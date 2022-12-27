@@ -211,40 +211,11 @@
     }
   }
 
-  // .calculator__license-top
-  &__license-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-
-    margin-bottom: 1rem;
-
-    @include breakpoint(small-mobile) {
-      display: contents;
-    }
-  }
-
   // .calculator__license-title
   &__license-title {
     @extend %fs-t2;
     font-weight: 700;
-
-    @include breakpoint(small-mobile) {
-      order: 1;
-      margin-bottom: 1rem;
-    }
-  }
-
-  // .calculator__license-label
-  &__license-label {
-    color: #939598;
-    @extend %fs-t2;
-
-    @include breakpoint(small-mobile) {
-      order: 3;
-      margin-bottom: 1.5rem;
-    }
+    margin-bottom: 1rem;
   }
 
   // .calculator__license-description
@@ -252,15 +223,28 @@
     margin-bottom: 1.5rem;
     max-width: 44rem;
 
+    font-weight: 400;
     @extend %fs-t2;
+  }
 
-    @include breakpoint(small-mobile) {
-      order: 2;
+  // .calculator__license-bottom
+  &__license-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+
+    @include breakpoint(small-tablet) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.5rem;
     }
   }
 
   // .calculator__license-count
   &__license-count {
+    flex-shrink: 0;
+
     display: flex;
     align-items: center;
 
@@ -269,8 +253,9 @@
     border: 0.1rem solid #DADCDF;
     border-radius: 0.6rem;
 
-    @include breakpoint(small-mobile) {
-      order: 4;
+    @include breakpoint(small-tablet) {
+      order: 2;
+      width: 100%;
     }
   }
 
@@ -294,6 +279,101 @@
     min-width: 5.4rem;
     padding: 0 1.6rem;
     text-align: center;
+
+    @include breakpoint(small-tablet) {
+      flex-grow: 1;
+    }
+  }
+
+  &__license-cost-block-wrapper {
+    display: contents;
+  }
+
+  // .calculator__license-discounts
+  &__license-discounts {
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    @include breakpoint(small-tablet) {
+      order: 3;
+    }
+  }
+
+  // .calculator__license-discount
+  &__license-discount {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .calculator__license-discount-title
+  &__license-discount-title {
+    font-weight: 500;
+    @extend %fs-t3;
+  }
+
+  // .calculator__license-discount-label
+  &__license-discount-label {
+    @extend %fs-t3;
+    color: #939598;
+  }
+
+  // .calculator__license-cost-block
+  &__license-cost-block {
+    flex-shrink: 0;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(small-tablet) {
+      order: 1;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__license-old-cost-wrapper {
+    @include breakpoint(small-tablet) {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+  }
+
+  // .calculator__license-old-cost
+  &__license-old-cost {
+    position: absolute;
+    top: -3rem;
+    left: 0;
+
+    font-weight: 400;
+    @extend %fs-t2;
+    color: #939598;
+    text-decoration: line-through;
+
+    @include breakpoint(small-tablet) {
+      position: static;
+    }
+  }
+
+  // .calculator__license-cost
+  &__license-cost {
+    margin-bottom: 0.2rem;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: #19B9DE;
+    line-height: 1;
+  }
+
+  // .calculator__license-cost-label
+  &__license-cost-label {
+    @extend %fs-t2;
+    font-weight: 400;
   }
 
   // .calculator__modules

@@ -105,3 +105,44 @@
         height: 5rem;
     }
 }
+
+.section-number {
+    position: absolute;
+    top: var(--s-0);
+    left: 0;
+
+    padding: 0.5rem 1rem 0.5rem 5.8rem;
+    background-color: white;
+    border-radius: 0 0.8rem 0.8rem 0;
+
+    font-size: 1.6rem;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: #174F77;
+
+    @include breakpoint(tablet) {
+        padding-left: var(--content-padding);
+    }
+
+    @include breakpoint(mobile) {
+        right: 0;
+        left: unset;
+
+        border-radius: 0.8rem 0 0 0.8rem;
+        padding: 0.5rem var(--content-padding) 0.5rem 1rem;
+    }
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 1.2rem;
+
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.08em;
+    color: #1D7CAA;
+    opacity: 0.4;
+    text-transform: uppercase;
+}

@@ -51,33 +51,51 @@
             Выберите одну или несколько схем работы
           </h3>
           <div class="calculator__license">
-            <div class="calculator__license-top">
-              <h4 class="calculator__license-title">Пользовательские лицензии 1С</h4>
-              <div class="calculator__license-label js-calculator-license-price">
-                <script type="text/x-tmpl" id="calculator-license-price">
-                  {%=o.license.cost%} {%=o.currency%}/день за одну лицензию
-                </script>
-              </div>
-            </div>
+            <h4 class="calculator__license-title">Пользовательские лицензии 1С</h4>
             <div class="calculator__license-description">
               <p>Количество лицензий соответствует количеству сотрудников, которые будут работать в системе</p>
             </div>
-            <div class="calculator__license-count">
-              <button class="calculator__license-count-button decrease" type="button">
-                <svg width="48" height="48">
-                  <use xlink:href="#minus"/>
-                </svg>
-              </button>
-              <div class="calculator__license-count-value js-calculator-license-count">
-                <script type="text/x-tmpl" id="calculator-license-count">
-                  {%=o.license.count%}
+            <div class="calculator__license-bottom">
+              <div class="calculator__license-count">
+                <button class="calculator__license-count-button decrease" type="button">
+                  <svg width="48" height="48">
+                    <use xlink:href="#minus"/>
+                  </svg>
+                </button>
+                <div class="calculator__license-count-value js-calculator-license-count">
+                  <script type="text/x-tmpl" id="calculator-license-count">
+                    {%=o.license.count%}
+                  </script>
+                </div>
+                <button class="calculator__license-count-button increase" type="button">
+                  <svg width="48" height="48">
+                    <use xlink:href="#plus"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="calculator__license-cost-block-wrapper js-calculator-license-cost">
+                <script type="text/x-tmpl" id="calculator-license-cost">
+                  {% if(o.license.discounts.length) { %}
+                    <ul class="calculator__license-discounts">
+                      {% for (let i=0; i<o.license.discounts.length; i++) { %}
+                        <li class="calculator__license-discount">
+                          <span class="calculator__license-discount-title">Cкидка {%=o.license.discounts[i].discount * 100%}%</span>
+                          <span class="calculator__license-discount-label">от {%=o.license.discounts[i].count%} шт</span>
+                        </li>
+                      {% } %}
+                    </ul>
+                  {% } %}
+                  <div class="calculator__license-cost-block">
+                    <span class="calculator__license-cost">{%=o.license.cost%} {%=o.currency%}/день</span>
+                    <div class="calculator__license-old-cost-wrapper">
+                      <span class="calculator__license-cost-label">за одну лицензию</span>
+                      {% if(o.license.discount) { %}
+                        <span class="calculator__license-old-cost">{%=o.license.old%} {%=o.currency%}/день</span>
+                      {% } %}
+                    </div>
+                  </div>
                 </script>
               </div>
-              <button class="calculator__license-count-button increase" type="button">
-                <svg width="48" height="48">
-                  <use xlink:href="#plus"/>
-                </svg>
-              </button>
             </div>
           </div>
         </div>

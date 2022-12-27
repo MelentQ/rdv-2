@@ -49,3 +49,39 @@
     transform: rotate(-90deg) translateY(0.1rem);
   }
 }
+
+.navigation--new {
+  .navigation__button {
+    width: 6.4rem;
+    height: 6.4rem;
+
+    background-color: rgba(0,0,0,0);
+    border: 0.1rem solid $primary-900;
+
+    &:hover {
+      background-color: $primary-900;
+
+      svg {
+        stroke: none;
+        fill: white;
+      }
+    }
+
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+
+      stroke: none;
+      fill: $primary-900;
+      stroke-width: 2px;
+    }
+  }
+
+  .navigation__button.prev svg {
+    transform: rotate(0deg) translateX(-0.2rem);
+  }
+
+  .navigation__button.next svg {
+    transform: rotate(-180deg) translateX(-0.2rem);
+  }
+}

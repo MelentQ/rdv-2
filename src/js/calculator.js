@@ -18,7 +18,7 @@ export default function calculator() {
 
       // просто рендер статики
       render('.js-calculator-marketplaces', 'calculator-marketplaces', data)
-      render('.js-calculator-license-price', 'calculator-license-price', data)
+      render('.js-calculator-license-cost', 'calculator-license-cost', data)
       render('.js-calculator-license-count', 'calculator-license-count', data)
       render('.js-calculator-modules', 'calculator-modules', data)
       render('.js-calculator-days', 'calculator-days', data)
@@ -83,15 +83,18 @@ export default function calculator() {
       return acc
     }, 0)
 
-    render('.js-calculator-license-price', 'calculator-license-price', {
-      license: {
-        cost: state.license.cost,
-      },
-      currency: state.currency,
-    })
     render('.js-calculator-license-count', 'calculator-license-count', {
       license: {
         count: state.license.count,
+      },
+    })
+    render('.js-calculator-license-cost', 'calculator-license-cost', {
+      currency: state.currency,
+      license: {
+        cost: state.license.cost,
+        old: data.license.cost,
+        discount: state.license.discount,
+        discounts: data.license.discounts.filter((item) => item.discount),
       },
     })
     render('.js-calculator-result', 'calculator-result', {
@@ -102,24 +105,22 @@ export default function calculator() {
       total,
       cost: total / state.days.count,
     })
-    render(
-      '.js-calculator-button',
-      'calculator-button',
-      {
-        json: JSON.stringify({
-          currency: state.currency,
-          list,
-          total: total,
-          cost: total / state.days.count,
-          days: state.days.count,
-        }),
-        total,
+    render('.js-calculator-button', 'calculator-button', {
+      json: JSON.stringify({
+        currency: state.currency,
+        list,
+        total: total,
+        cost: total / state.days.count,
         days: state.days.count,
-        currency: state.currency
-      }
-    )
+      }),
+      total,
+      days: state.days.count,
+      currency: state.currency,
+    })
 
-    sticky && sticky.update()
+    if (sticky) {
+      sticky.update()
+    }
   }
 
   function simplifyState(data) {
