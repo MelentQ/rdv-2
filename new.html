@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="css/styles.css">
-        <title>Калькулятор</title>
+        <title>Новые блоки</title>
     </head>
     <body class="no-touch" ontouchstart="">
         <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
@@ -345,179 +345,170 @@
             </header>
 
             <main class="page-main">
-                <section class="calculator loading js-calculator" data-url="assets/data/calculator.json">
+                <div class="cards-slider">
+                    <span class="section-number">01 b</span>
                     <div class="container">
-                        <h2 class="calculator__title">Тарифы</h2>
-                        <div class="calculator__inner">
-                            <div class="calculator__left">
-                                <div class="calculator__block">
-                                    <h3 class="calculator__block-title">Рассчитайте стоимость интеграции 1С с маркетплейсами Выберите одну или несколько схем работы</h3>
-                                    <ul class="calculator__marketplaces js-calculator-marketplaces">
-                                        <script type="text/x-tmpl" id="calculator-marketplaces">{% for (let i=0; i<o.marketplaces.length; i++) { %}
-                    <li class="calculator__marketplace">
-                      <div class="calculator__marketplace-logo-wrapper">
-                        <img src="{%=o.marketplaces[i].logo%}" alt="{%=o.marketplaces[i].name%}">
-                      </div>
-                      <span class="calculator__marketplace-label">выберите схему</span>
-                      <ul class="calculator__marketplace-options">
-                        {% for (let j=0; j<o.marketplaces[i].options.length; j++) { %}
-                          <li class="calculator__marketplace-option{% if(o.marketplaces[i].options[j].active) { %} active{% } %}" tabindex="0" data-key="{%=o.marketplaces[i].options[j].key%}">
-                            <div class="calculator__marketplace-option-name-wrapper">
-                              <span class="calculator__marketplace-option-name">{%=o.marketplaces[i].options[j].name%}</span>
-                              {% if(o.marketplaces[i].options[j].tooltip) { %}
-                                <div class="calculator__tooltip">
-                                  <button class="calculator__tooltip-button" type="button">
-                                    <svg width="24" height="24">
-                                      <use xlink:href="#info-simple"/>
-                                    </svg>
-                                  </button>
-                                  <div class="calculator__tooltip-content">
-                                    {%#o.marketplaces[i].options[j].tooltip%}
-                                  </div>
+                        <div class="cards-slider__inner js-init-slider">
+                            <div class="cards-slider__top">
+                                <h2 class="cards-slider__heading">Модули интеграции вашей 1С с маркетплейсами</h2>
+                                <div class="navigation navigation--new">
+                                    <button class="navigation__button prev" type="button" title="Prev">
+                                        <svg width="13" height="8">
+                                            <use xlink:href="#chevron-2" />
+                                        </svg>
+                                    </button>
+                                    <button class="navigation__button next" type="button" title="Next">
+                                        <svg width="13" height="8">
+                                            <use xlink:href="#chevron-2" />
+                                        </svg>
+                                    </button>
                                 </div>
-                              {% } %}
                             </div>
-                            <span class="calculator__marketplace-option-cost">{%=o.marketplaces[i].options[j].cost%} {%=o.currency%}/день</span>
-                          </li>
-                        {% } %}
-                      </ul>
-                    </li>
-                  {% } %}</script>
-                                    </ul>
-                                </div>
-                                <div class="calculator__block">
-                                    <h3 class="calculator__block-title">Рассчитайте стоимость интеграции 1С с маркетплейсами Выберите одну или несколько схем работы</h3>
-                                    <div class="calculator__license">
-                                        <h4 class="calculator__license-title">Пользовательские лицензии 1С</h4>
-                                        <div class="calculator__license-description">
-                                            <p>Количество лицензий соответствует количеству сотрудников, которые будут работать в системе</p>
+                            <div class="swiper loading cards-slider__list-wrapper">
+                                <ul class="swiper-wrapper cards-slider__list">
+                                    <li class="swiper-slide cards-slider__item">
+                                        <div class="cards-slider__item-image-wrapper">
+                                            <img src="img/content/cards-slider/1.png" alt="Image">
                                         </div>
-                                        <div class="calculator__license-bottom">
-                                            <div class="calculator__license-count">
-                                                <button class="calculator__license-count-button decrease" type="button">
-                                                    <svg width="48" height="48">
-                                                        <use xlink:href="#minus" />
-                                                    </svg>
-                                                </button>
-                                                <div class="calculator__license-count-value js-calculator-license-count">
-                                                    <script type="text/x-tmpl" id="calculator-license-count">{%=o.license.count%}</script>
-                                                </div>
-                                                <button class="calculator__license-count-button increase" type="button">
-                                                    <svg width="48" height="48">
-                                                        <use xlink:href="#plus" />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <div class="calculator__license-cost-block-wrapper js-calculator-license-cost">
-                                                <script type="text/x-tmpl" id="calculator-license-cost">{% if(o.license.discounts.length) { %}
-                        <ul class="calculator__license-discounts">
-                          {% for (let i=0; i<o.license.discounts.length; i++) { %}
-                            <li class="calculator__license-discount">
-                              <span class="calculator__license-discount-title">Cкидка {%=o.license.discounts[i].discount * 100%}%</span>
-                              <span class="calculator__license-discount-label">от {%=o.license.discounts[i].count%} шт</span>
-                            </li>
-                          {% } %}
-                        </ul>
-                      {% } %}
-                      <div class="calculator__license-cost-block">
-                        <span class="calculator__license-cost">{%=o.license.cost%} {%=o.currency%}/день</span>
-                        <div class="calculator__license-old-cost-wrapper">
-                          <span class="calculator__license-cost-label">за одну лицензию</span>
-                          {% if(o.license.discount) { %}
-                            <span class="calculator__license-old-cost">{%=o.license.old%} {%=o.currency%}/день</span>
-                          {% } %}
+                                        <h3 class="cards-slider__item-heading">Автоматизация складских процессов</h3>
+                                        <div class="cards-slider__item-text">Поставьте на конвейер процессы комплектации, сборки, упаковки и отгрузки 300+заказов в системе 1С за счет готовых инструментов RDV Маркет</div>
+                                        <div class="cards-slider__item-button-wrapper">
+                                            <a class="button button--min button--stroke-bold" href="#">Подробнее</a>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide cards-slider__item">
+                                        <div class="cards-slider__item-image-wrapper">
+                                            <img src="img/content/cards-slider/2.png" alt="Image">
+                                        </div>
+                                        <h3 class="cards-slider__item-heading">Модуль «Коннектор»</h3>
+                                        <div class="cards-slider__item-text">Сохраните выстроенные процессы продаж, склада и интегрируйтесь с маркетплейсами, благодаря модулю «Коннектор»</div>
+                                        <div class="cards-slider__item-button-wrapper">
+                                            <a class="button button--min button--stroke-bold" href="#">Подробнее</a>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide cards-slider__item">
+                                        <div class="cards-slider__item-image-wrapper">
+                                            <img src="img/content/cards-slider/3.png" alt="Image">
+                                        </div>
+                                        <h3 class="cards-slider__item-heading">«Внешние цены и остатки поставщиков»</h3>
+                                        <div class="cards-slider__item-text">Контролируйте, своевременно обновляйте и передавайте на маркетплейсы из 1С внешние цены и остатки поставщиков</div>
+                                        <div class="cards-slider__item-button-wrapper">
+                                            <a class="button button--min button--stroke-bold" href="#">Подробнее</a>
+                                        </div>
+                                    </li>
+                                    <li class="swiper-slide cards-slider__item">
+                                        <div class="cards-slider__item-image-wrapper">
+                                            <img src="img/content/attention/attention.png" alt="Image">
+                                        </div>
+                                        <h3 class="cards-slider__item-heading">Тест</h3>
+                                        <div class="cards-slider__item-text">Тест</div>
+                                        <div class="cards-slider__item-button-wrapper">
+                                            <a class="button button--min button--stroke-bold" href="#">Подробнее</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="cards-slider__pagination js-pagination"></div>
+                            </div>
                         </div>
-                      </div></script>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="calculator__block">
-                                    <h3 class="calculator__block-title">Рассчитайте стоимость интеграции 1С с маркетплейсами Выберите одну или несколько схем работы</h3>
-                                    <ul class="calculator__modules js-calculator-modules">
-                                        <script type="text/x-tmpl" id="calculator-modules">{% for (let i=0; i<o.modules.length; i++) { %}
-                    <li class="calculator__module{% if(o.modules[i].active) { %} active{% } %}">
-                      <div class="calculator__module-top">
-                        <h4 class="calculator__module-title">{%#o.modules[i].name%}</h4>
-                        <span class="calculator__module-label">{%=o.modules[i].cost%} {%=o.currency%}/день</span>
-                      </div>
-                      <div class="calculator__module-bottom">
-                        <button class="button button--stroke" type="button" data-key="{%=o.modules[i].key%}">
-                          <span>Добавить</span>
-                          <span>Убрать</span>
-                        </button>
-                        {% if(o.modules[i].tooltip) { %}
-                          <div class="calculator__tooltip">
-                            <button class="calculator__tooltip-button" type="button">
-                              <svg width="24" height="24">
-                                <use xlink:href="#info"/>
-                              </svg>
-                            </button>
-                            <div class="calculator__tooltip-content">
-                              {%#o.modules[i].tooltip%}
-                            </div>
-                          </div>
-                        {% } %}
-                      </div>
-                    </li>
-                  {% } %}</script>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="calculator__layout-ghost"></div>
-                            <div class="calculator__right" data-sticky-container>
-                                <div class="calculator__result js-calculator-sticky" data-margin-top="120">
-                                    <h3 class="calculator__result-title">Стоимость тарифа</h3>
-                                    <ul class="calculator__result-options js-calculator-days">
-                                        <script type="text/x-tmpl" id="calculator-days">{% for (let i=0; i<o.days.length; i++) { %}
-                    <li>
-                      <button class="calculator__result-option{% if(o.days[i].active) { %} active{% } %}" type="button" data-key="{%=o.days[i].key%}">{%=o.days[i].count%} дней</button>
-                    </li>
-                  {% } %}</script>
-                                    </ul>
-                                    <div class="js-calculator-result">
-                                        <script type="text/x-tmpl" id="calculator-result"><div class="calculator__result-price-block">
-                    {% if(o.discount) { %}
-                      <div class="calculator__discount">
-                        <span class="calculator__old-price">{%=o.old.toLocaleString('ru-RU')%} {%=o.currency%}</span>
-                        <span class="calculator__discount-percent">-{%=o.discount * 100%}%</span>
-                      </div>
-                    {% } %}
-                    <span class="calculator__result-price">{%=o.total.toLocaleString('ru-RU')%} {%=o.currency%}</span>
-                    <span class="calculator__result-cost-per-day">{%=o.cost.toLocaleString('ru-RU')%} {%=o.currency%}/день</span>
-                  </div>
-    
-                  {% if(o.list.length) { %}
-                    <div class="calculator__result-list-block">
-                      <span class="calculator__result-list-title">В тариф включено:</span>
-                      <ul class="calculator__result-list">
-    
-                        {% for (let i=0; i<o.list.length; i++) { %}
-                          <li class="calculator__result-list-item">
-                            <span class="calculator__result-list-item-title">{%#o.list[i].name%}</span>
-                            <div class="calculator__result-list-item-price-block">
-                              {% if(o.list[i].old) { %}
-                                <span class="calculator__result-list-item-old-price">{%=o.list[i].old.toLocaleString('ru-RU')%} {%=o.currency%}</span>
-                              {% } %}
-                              <span class="calculator__result-list-item-price">{%=o.list[i].price.toLocaleString('ru-RU')%} {%=o.currency%}</span>
-                            </div>
-                          </li>
-                        {% } %}
-                      </ul>
                     </div>
-                  {% } %}</script>
-                                    </div>
-                                    <div class="calculator__result-button js-calculator-button">
-                                        <script type="text/x-tmpl" id="calculator-button"><div class="calculator__result-button-info">
-                    <span class="calculator__result-button-price">{%=o.total.toLocaleString('ru-RU')%} {%=o.currency%}</span>
-                    <span class="calculator__result-button-days">за {%=o.days%} дней</span>
-                  </div>
-                  <button class="button button--secondary js-calculator-data" data-modal="#form1" data-calculator-data="{%=o.json%}" data-commentary="Заявка с калькулятора RDV Маркет." data-request-type="3dd16968-1c80-4f63-9c59-635da55bb2d6" type="button" >отправить заявку</button></script>
-                                    </div>
-                                    <span class="calculator__result-label">Тестовый период 14 дней и подключение 1 кабинета бесплатно!</span>
+                </div>
+                <section class="text-image">
+                    <span class="section-number">02</span>
+                    <div class="container">
+                        <div class="text-image__inner">
+                            <div class="text-image__left">
+                                <span class="section-label">/ Интеграция и автоматизация</span>
+                                <h2 class="text-image__heading">Консалтинг по автоматизации бизнес-процессов</h2>
+                                <div class="text-image__text">Мы понимаем специфику работы маркетплейсов, имеем большой опыт автоматизации бизнес-процессов и готовы оказать консалтинговые услуги и выстроить оптимальные процессы ваших отделов для повышения эффективности торговли.</div>
+                                <div class="text-image__link-wrapper">
+                                    <a class="button button--stroke-bold button--min text-image__link" href="#" data-modal="#form1">Подробнее</a>
                                 </div>
                             </div>
-                            <div class="calculator__loader"></div>
+                            <div class="text-image__right">
+                                <div class="text-image__image-wrapper">
+                                    <img src="img/content/illustrations/6.png" alt="Illustration">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="cards-section">
+                    <span class="section-number">03</span>
+                    <div class="container">
+                        <div class="cards-section__inner">
+                            <div class="cards-section__heading-block">
+                                <div class="cards-section__left">
+                                    <span class="section-label">/ Маркетинг</span>
+                                    <h2 class="cards-section__heading">Комплексное бизнес-сопровождение на маркетплейсах</h2>
+                                </div>
+                                <div class="cards-section__right">
+                                    <div class="cards-section__text">В рамках партнерства с популярными маркетплейсами мы оказываем полный цикл услуг по выходу и развитию вашей компании на маркетплейсах.</div>
+                                    <div class="cards-section__link-wrapper">
+                                        <a class="button button--stroke-bold button--min cards-section__link" href="#" data-modal="#form1">
+                                            <span class="hide-on-mobile">Подробнее</span>
+                                            <span class="show-on-mobile">Показать всё</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cards-section__list-wrapper js-show-hide js-show-hide--mobile" data-count="3">
+                                <ul class="cards-section__list">
+                                    <li class="cards-section__item js-show-hide-item">
+                                        <div class="cards-section__item-inner">
+                                            <div class="cards-section__item-heading-container">
+                                                <h3 class="cards-section__item-heading">Базовое
+                                                    <br>сопровождение
+                                                </h3>
+                                            </div>
+                                            <div class="cards-section__item-text">Проведем первичный аудит личного кабинета, проанализируем текущие карточки, исправим ошибки и заведем новые по предоставленному контенту (описание, характеристики и фото).</div>
+                                        </div>
+                                    </li>
+                                    <li class="cards-section__item js-show-hide-item">
+                                        <div class="cards-section__item-inner">
+                                            <div class="cards-section__item-heading-container">
+                                                <h3 class="cards-section__item-heading">Услуги по созданию контента</h3>
+                                            </div>
+                                            <div class="cards-section__item-text">Проведем аудит текущих карточек товаров, дадим рекомендации, на каких товара сфокусироваться для повышения продаж. Создадим новый контент (описание, характеристики фото), проработаем каждую карточку под ключ, учитывая все особенности маркетплейсов, поведения покупателей и конкурентов.</div>
+                                        </div>
+                                    </li>
+                                    <li class="cards-section__item js-show-hide-item">
+                                        <div class="cards-section__item-inner">
+                                            <div class="cards-section__item-heading-container">
+                                                <h3 class="cards-section__item-heading">Оптимизация размещения товаров на складах</h3>
+                                            </div>
+                                            <div class="cards-section__item-text">Поможем спланировать правильное размещение товаров на складе с учётом их характеристик (хрупкость, вес, объём, габариты, составные части), сбалансировать состояние товарных запасов, минимизировать риски повреждения товаров на складе, а также повысить эффективность операцией в зоне отбора и сборки товаров.</div>
+                                        </div>
+                                    </li>
+                                    <li class="cards-section__item js-show-hide-item">
+                                        <div class="cards-section__item-inner">
+                                            <div class="cards-section__item-heading-container">
+                                                <h3 class="cards-section__item-heading">Продвижение на маркетплейсе</h3>
+                                            </div>
+                                            <div class="cards-section__item-text">Предоставим подробные рекомендации по работе с внутренними инструментами продвижения на маркетплейсах, проведем seo-оптимизацию наименований и описаний карточек товаров.</div>
+                                        </div>
+                                    </li>
+                                    <li class="cards-section__item js-show-hide-item">
+                                        <div class="cards-section__item-inner">
+                                            <div class="cards-section__item-heading-container">
+                                                <h3 class="cards-section__item-heading">Расширенные консультации</h3>
+                                            </div>
+                                            <div class="cards-section__item-text">Предоставим консультационную помощь по каждому из популярных маркетплейсов, дадим советы по разработке маркетинговой стратегии развития бизнеса на МП, работе с товарным ассортиментом и различными рекламными инструментами.</div>
+                                        </div>
+                                    </li>
+                                    <li class="cards-section__item js-show-hide-item">
+                                        <div class="cards-section__item-inner">
+                                            <div class="cards-section__item-heading-container">
+                                                <h3 class="cards-section__item-heading">Аудит работы с маркетплейсами</h3>
+                                            </div>
+                                            <div class="cards-section__item-text">Предоставим консультационную помощь по каждому из популярных маркетплейсов, дадим советы по разработке маркетинговой стратегии развития бизнеса на МП, работе с товарным ассортиментом и различными рекламными инструментами.</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button class="button button--stroke-bold js-show-hide-button cards-section__show-more" type="button">
+                                    <span class="default-label">Показать ещё</span>
+                                    <span class="active-label">Скрыть</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
