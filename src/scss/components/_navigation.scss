@@ -58,6 +58,10 @@
     background-color: rgba(0,0,0,0);
     border: 0.1rem solid $primary-900;
 
+    &.disabled {
+      display: none;
+    }
+
     &:hover {
       background-color: $primary-900;
 

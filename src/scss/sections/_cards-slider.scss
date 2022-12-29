@@ -41,6 +41,14 @@
     @include breakpoint(tablet) {
       padding-right: 2rem;
     }
+
+    &.not-initialized .cards-slider__list {
+      display: block;
+
+      .cards-slider__item {
+        margin-bottom: 4rem;
+      }
+    }
   }
 
   // .cards-slider__list

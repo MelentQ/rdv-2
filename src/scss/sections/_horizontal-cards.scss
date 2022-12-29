@@ -45,6 +45,14 @@
     @include breakpoint(mobile) {
       padding-right: 2rem;
     }
+
+    &.not-initialized .horizontal-cards__list {
+      display: block;
+
+      .horizontal-cards__item {
+        margin-bottom: 4rem;
+      }
+    }
   }
 
   // .horizontal-cards__list

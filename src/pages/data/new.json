@@ -1,5 +1,6 @@
 {
   "title": "Новые блоки",
+  "isAdmin": "is-admin123",
   "puzzles": [
     {
       "title": "свой IT-продукт rdv маркет"
@@ -51,11 +52,6 @@
       "image": "img/content/cards-slider/3.png",
       "heading": "«Внешние цены и остатки поставщиков»",
       "text": "Контролируйте, своевременно обновляйте и передавайте на маркетплейсы из 1С внешние цены и остатки поставщиков"
-    },
-    {
-      "image": "img/content/attention/attention.png",
-      "heading": "Тест",
-      "text": "Тест"
     }
   ],
   "03_cards": [

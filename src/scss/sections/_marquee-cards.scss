@@ -5,7 +5,13 @@
 
   // .marquee-cards__inner
   &__inner {
+    &.not-initialized .marquee-cards__list {
+      display: block;
 
+      .marquee-cards__item {
+        margin-bottom: 4rem;
+      }
+    }
   }
 
   // .marquee-cards__list

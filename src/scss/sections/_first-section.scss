@@ -132,19 +132,19 @@
     width: 32.8rem;
     height: 32.8rem;
 
-    font-size: 10px;
+    font-size: 1rem;
 
     @include breakpoint(tablet) {
       width: calc(32.8rem * 0.8);
       height: calc(32.8rem * 0.8);
-      font-size: 8px;
+      font-size: 0.8rem;
       margin-bottom: calc(4rem * 0.8);
     }
 
     @include breakpoint(mobile) {
       width: calc(32.8rem * 0.6);
       height: calc(32.8rem * 0.6);
-      font-size: 6px;
+      font-size: 0.6rem;
       margin-bottom: calc(4rem * 0.6);
     }
 
@@ -300,6 +300,9 @@
 
   // .first-section__puzzle-title
   &__puzzle-title {
+    position: relative;
+    z-index: 2;
+
     font-size: 1em;
     text-transform: uppercase;
     font-weight: 700;
@@ -433,6 +436,7 @@
 
     @include breakpoint(mobile) {
       font-size: 1rem;
+      max-width: 20rem;
     }
   }
 
@@ -450,6 +454,7 @@
 
     @include breakpoint(mobile) {
       font-size: 1.2rem;
+      max-width: 20rem;
     }
   }
 }

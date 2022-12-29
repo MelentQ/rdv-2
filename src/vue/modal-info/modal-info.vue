@@ -3,7 +3,7 @@
 		<div class="modal-info__close" @click="closeModal"> 
 			<span class="link link--color--black-light">
 				<svg class="icon-modern icon-modern--cross link__icon icon-modern--size--normal">
-					<use xlink:href="assets/include/assets/img/sprite.svg#cross-usage"></use>
+					<use :xlink:href="assetsPath + '/include/assets/img/sprite.svg#cross-usage'"></use>
 				</svg>
 			</span>
 		</div>
@@ -22,7 +22,7 @@ export default {
 	props: {},
 	data: () => {
 		return {
-
+      assetsPath: document.body.dataset.assetsPath || 'assets/'
 		};
 	},
 	computed: {
