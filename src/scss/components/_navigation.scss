@@ -59,7 +59,13 @@
     border: 0.1rem solid $primary-900;
 
     &.disabled {
-      display: none;
+      opacity: 0.4;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &.swiper-button-lock {
+      // display: none;
     }
 
     &:hover {

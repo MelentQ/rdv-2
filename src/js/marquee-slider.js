@@ -1,8 +1,6 @@
 import Swiper, { Navigation, EffectFade, Autoplay, Pagination, HashNavigation, Grid, FreeMode } from 'swiper'
 import window from 'inputmask/lib/global/window'
 
-Swiper.use([Navigation, EffectFade, Autoplay, Pagination, HashNavigation, Grid, FreeMode])
-
 export default function infinitySlider() {
   const sliders = document.querySelectorAll('.js-infinity-slider')
 
@@ -13,6 +11,7 @@ export default function infinitySlider() {
       container.classList.remove('loading')
     } else {
       const swiper = new Swiper(slider, {
+        modules: [Navigation, EffectFade, Autoplay, Pagination, HashNavigation, Grid, FreeMode],
         slidesPerView: 'auto',
         speed: 5000,
         loop: true,
