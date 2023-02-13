@@ -6,9 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="format-detection" content="telephone=no">
         <link rel="stylesheet" href="css/styles.css">
-        <title>Главная страница</title>
+        <title>LAST</title>
     </head>
-    <body class="no-touch" ontouchstart="" data-assets-path="assets/">
+    <body class="no-touch is-admin123" ontouchstart="" data-assets-path="assets/">
         <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
             <?xml version="1.0" encoding="utf-8"?>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -345,24 +345,103 @@
             </header>
 
             <main class="page-main">
-                <section class="links-list">
+                <section class="reviews">
                     <div class="container">
-                        <h2 class="links-list__title">Страницы:</h2>
-                        <div class="links-list__inner">
-                            <a class="button" href="./all.html" target="_blank">Всё сразу</a>
-                            <a class="button" href="./forms.html" target="_blank">1. Формы</a>
-                            <a class="button" href="./integration.html" target="_blank">2. Интеграция с Wildberries</a>
-                            <a class="button" href="./cards.html" target="_blank">3. Слайдер и два списка</a>
-                            <a class="button" href="./headings.html" target="_blank">4. Заголовки</a>
-                            <a class="button" href="./lists.html" target="_blank">4. Нумерованные списки и булиты</a>
-                            <a class="button" href="./steps.html" target="_blank">5. Шаги, частые вопросы, внимание</a>
-                            <a class="button" href="./columns.html" target="_blank">6. Блоки в 2 колонки</a>
-                            <a class="button" href="./comparison.html" target="_blank">7. Кнопки и сравнение</a>
-                            <a class="button" href="./text.html" target="_blank">8. Текст и блок видео</a>
-                            <a class="button" href="./temp.html" target="_blank">9. По правкам</a>
-                            <a class="button" href="./calculator.html" target="_blank">10. Калькулятор</a>
-                            <a class="button" href="./new.html" target="_blank">11. Новые</a>
-                            <a class="button" href="./last.html" target="_blank">12. Last</a>
+                        <div class="reviews__inner js-reviews-slider">
+                            <h2 class="reviews__heading">Отзывы о работе с RDV Маркет</h2>
+                            <div class="reviews__slider swiper loading">
+                                <ul class="reviews__slider-wrapper swiper-wrapper">
+                                    <li class="reviews__slider-item swiper-slide">
+                                        <div class="review">
+                                            <div class="review__info">
+                                                <div class="review__logo-wrapper">
+                                                    <img src="img/content/reviews/1.png" alt="" class="review__logo">
+                                                </div>
+                                                <h3 class="review__title">ООО «Динатон»</h3>
+                                                <div class="review__description">Дистрибьютор музыкальных инструментов и аксессуаров</div>
+                                            </div>
+                                            <div class="review__text">
+                                                <p>Наша компания уже несколько лет продает на маркетплейсах Wildberries, Ozon и Яндекс.Маркет. Для WB у нас заведено 4 личных кабинета, для Ozon - 3 ЛК. С учетом частых изменений в работе маркетплейсов мы столкнулись с трудностями реализации необходимых обновлений для каждого маркетплейса. На это у нас уходило много времени, вылезали ошибки, мы стали терять заказы. Поняли, что нам нужен сервис, где все процессы будут автоматизированы, а все операции будут протекать в единой системе. </p>
+                                                <p>Так мы начали работать в облачной системе RDV Маркет. В едином окне 1С мы ведем учет по всем маркетплейсам без необходимости переключения  в отдельные ЛК, а  любые изменения на стороне площадок для нас проходят безболезненно за счет автоматических обновлений. При работе с RDV Маркет мы заметно ускорили процессы сборки и упаковки заказов, упростили обработку большого количества заказов, увеличили количество SKU (с 5000 до 21000). </p>
+                                                <p>Благодарим команду RDV Маркет для профессионализм и продолжаем плодотворное сотрудничество. </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="reviews__slider-item swiper-slide">
+                                        <div class="review">
+                                            <div class="review__info">
+                                                <div class="review__logo-wrapper">
+                                                    <img src="img/content/reviews/1.png" alt="" class="review__logo">
+                                                </div>
+                                                <h3 class="review__title">ООО «Lorem ipsum»</h3>
+                                                <div class="review__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem, et eum nisi reiciendis repellat. 2</div>
+                                            </div>
+                                            <div class="review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem, et eum nisi reiciendis repellat. 2</div>
+                                        </div>
+                                    </li>
+                                    <li class="reviews__slider-item swiper-slide">
+                                        <div class="review">
+                                            <div class="review__info">
+                                                <div class="review__logo-wrapper">
+                                                    <img src="img/content/reviews/1.png" alt="" class="review__logo">
+                                                </div>
+                                                <h3 class="review__title">ООО «Lorem ipsum»</h3>
+                                                <div class="review__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem, et eum nisi reiciendis repellat. 3</div>
+                                            </div>
+                                            <div class="review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem, et eum nisi reiciendis repellat. 3</div>
+                                        </div>
+                                    </li>
+                                    <li class="reviews__slider-item swiper-slide">
+                                        <div class="review">
+                                            <div class="review__info">
+                                                <div class="review__logo-wrapper">
+                                                    <img src="img/content/reviews/1.png" alt="" class="review__logo">
+                                                </div>
+                                                <h3 class="review__title">ООО «Lorem ipsum»</h3>
+                                                <div class="review__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem, et eum nisi reiciendis repellat. 4</div>
+                                            </div>
+                                            <div class="review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem, et eum nisi reiciendis repellat. 4</div>
+                                        </div>
+                                    </li>
+                                    <li class="reviews__slider-item swiper-slide">
+                                        <div class="review">
+                                            <div class="review__info">
+                                                <div class="review__logo-wrapper">
+                                                    <img src="img/content/reviews/1.png" alt="" class="review__logo">
+                                                </div>
+                                                <h3 class="review__title">ООО «Lorem ipsum»</h3>
+                                                <div class="review__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem, et eum nisi reiciendis repellat. 5</div>
+                                            </div>
+                                            <div class="review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem, et eum nisi reiciendis repellat. 5</div>
+                                        </div>
+                                    </li>
+                                    <li class="reviews__slider-item swiper-slide">
+                                        <div class="review">
+                                            <div class="review__info">
+                                                <div class="review__logo-wrapper">
+                                                    <img src="img/content/reviews/1.png" alt="" class="review__logo">
+                                                </div>
+                                                <h3 class="review__title">ООО «Lorem ipsum»</h3>
+                                                <div class="review__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem, et eum nisi reiciendis repellat. 6</div>
+                                            </div>
+                                            <div class="review__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem, et eum nisi reiciendis repellat. 6</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="navigation navigation--new navigation--small">
+                                    <button class="navigation__button prev" type="button" title="Prev">
+                                        <svg width="13" height="8">
+                                            <use xlink:href="#chevron-2" />
+                                        </svg>
+                                    </button>
+                                    <button class="navigation__button next" type="button" title="Next">
+                                        <svg width="13" height="8">
+                                            <use xlink:href="#chevron-2" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="new-pagination"></div>
+                            </div>
                         </div>
                     </div>
                 </section>
