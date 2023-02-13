@@ -95,3 +95,15 @@
     transform: rotate(-180deg) translateX(-0.2rem);
   }
 }
+
+.navigation--small {
+  .navigation__button {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  svg {
+    width: 1.4rem;
+    height: 0.9rem;
+  }
+}

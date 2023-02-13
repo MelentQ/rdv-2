@@ -27,6 +27,7 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import slider from '%src%/js/slider'
 import infinitySlider from '%src%/js/marquee-slider'
 import smoothScroll from '%src%/js/smoothScroll'
+import reviewsSlider from '%src%/js/reviewsSlider'
 
 document.addEventListener('DOMContentLoaded', function () {
   window.rdv = {
@@ -65,6 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   infinitySlider()
   smoothScroll()
+
+  reviewsSlider()
 
   const btnTop = document.querySelector('.top_button')
 
