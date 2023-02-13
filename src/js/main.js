@@ -34,6 +34,10 @@ document.addEventListener('DOMContentLoaded', function () {
     isAdmin: document.body.classList.contains('is-admin'),
   }
 
+  // В проекте сохранился легаси код, связанный со старым калькулятором на Vue.js
+  // src/scss/old
+  // src/js/old
+  // src/vue
   legacy()
 
   masks()

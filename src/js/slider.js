@@ -6,7 +6,9 @@ export default function slider() {
 
   containers.forEach((container) => {
     if (container.classList.contains('js-init-slider--mobile')) {
-      if (window.matchMedia('screen and (max-width: 669px)').matches) {
+      if (container.classList.contains('--799') && window.matchMedia('screen and (max-width: 799px)').matches) {
+        init()
+      } else if (window.matchMedia('screen and (max-width: 669px)').matches) {
         init()
       } else {
         container.querySelector('.swiper').classList.remove('loading')
