@@ -17,11 +17,11 @@ export default function reviewsSlider() {
           slidesPerView: 1,
           spaceBetween: 0,
           effect: 'fade',
-          autoplay: {
-            delay: 10000,
-            disableOnInteraction: false,
-            waitForTransition: false,
-          },
+          // autoplay: {
+          //   delay: 10000,
+          //   disableOnInteraction: false,
+          //   waitForTransition: false,
+          // },
           fadeEffect: {
             crossFade: true,
           },
@@ -39,12 +39,7 @@ export default function reviewsSlider() {
             el: container.querySelector('.new-pagination'),
             clickable: true,
             renderBullet: function (index, className) {
-              return `<button class="${className}" type="button">
-                        <svg width="28" height="28" viewBox="0 0 28 28">
-                            <circle cx="14" cy="14" r="14" stroke="#174F77" stroke-opacity="0.2" stroke-width="1" fill="none"></circle>
-                            <circle cx="14" cy="14" r="14" stroke="#174F77" stroke-opacity="1" stroke-width="1" fill="none"></circle>
-                        </svg>
-                      </button>`
+              return `<button class="${className}" type="button"></button>`
             },
             bulletClass: 'new-pagination__item',
             bulletActiveClass: 'active',
@@ -56,3 +51,8 @@ export default function reviewsSlider() {
     }
   })
 }
+
+// <svg width="28" height="28" viewBox="0 0 28 28">
+//   <circle cx="14" cy="14" r="14" stroke="#174F77" stroke-opacity="0.2" stroke-width="1" fill="none"></circle>
+//   <circle cx="14" cy="14" r="14" stroke="#174F77" stroke-opacity="1" stroke-width="1" fill="none"></circle>
+// </svg>
